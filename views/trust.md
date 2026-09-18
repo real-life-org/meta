@@ -76,7 +76,7 @@ Kollektiver Akteur mit Mitgliedern, Policy, Autoritäts-Log und Dokumenten. Iden
 
 Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#2-conventions-and-terminology)
 
-- same: **[Space](network.md#space) `rlnp:Space`** (Network)
+- same: **[Circle](network.md#kreis) `rlnp:Kreis`** (Network)
 - same: **[Space](stack.md#space) `rls:space`** (Stack)
 
 ## Member

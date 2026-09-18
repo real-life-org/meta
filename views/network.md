@@ -40,11 +40,14 @@ Wiederkehrender Begegnungsraum. Wählt Form und Zugang selbst. Kreise verbinden 
 
 A recurring space of encounter. Chooses its own form and access. Circles connect through people, not through parent circles.
 
+Auch: Space, Space
+
 Quelle: [real-life-network-protocol.md#64-kreis](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#64-kreis)
 
-- verwandt: **[Space](network.md#space)** (Netzwerk)
+- gleich: **[Space](stack.md#space)** (Stack)
+- gleich: **[Gruppe](trust.md#group)** (Protokoll)
 
-> A circle is the people, a space is the vessel. A circle chooses its own form and access; a space is meant to carry exactly that: publicly visible, open for anyone to post, or by invitation. Whether the two converge is open (2026-09-18).
+> Converged 2026-09-18: a circle is the thing itself; the Stack constructs it as a space, the Trust Protocol as a group. A circle chooses its own form and access, and the space carries exactly that: publicly visible, open for anyone to post, or by invitation. "Space" in the RLNP text is a reference to the Stack space, not a term of its own.
 
 ## Mensch
 *Person*
@@ -102,21 +105,6 @@ Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://gith
 - Ziel: gleich mit: **[Sichtbarkeit](stack.md#sichtbarkeit)** (Stack)
 
 > Three ways, three constructions: "within the circle" = RLTP private; "mirrored" = Stack mirror bridge; "published" = RLTP open is only the origin, delivery of open data needs another backend (multi-connector). VisibilityMode covers the first two only.
-
-## Space
-*Space*
-
-Digitaler oder sozialer Raum für eine Gruppe, Initiative, ein Projekt oder einen Kreis. Ein Gefäß für Verständigung, kein Zustand der Sache.
-
-A digital or social room for a group, initiative, project or circle. A vessel for shared understanding, not a state of the thing itself.
-
-Quelle: [GLOSSARY.md#space](https://github.com/real-life-org/real-life-network-protocol/blob/main/GLOSSARY.md#space)
-
-- verwandt: **[Kreis](network.md#kreis)** (Netzwerk)
-- gleich: **[Space](stack.md#space)** (Stack)
-- gleich: **[Gruppe](trust.md#group)** (Protokoll)
-
-> Converged 2026-09-18: all three say "vessel with members".
 
 ## Spiegel
 *Mirror*

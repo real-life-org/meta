@@ -81,7 +81,7 @@ Code: `Group`
 
 Quelle: [04-items-relations-groups-spaces.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/04-items-relations-groups-spaces.md)
 
-- gleich: **[Space](network.md#space)** (Netzwerk)
+- gleich: **[Kreis](network.md#kreis)** (Netzwerk)
 - gleich: **[Gruppe](trust.md#group)** (Protokoll)
 
 ## Spiegel

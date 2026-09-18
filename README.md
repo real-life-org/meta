@@ -37,6 +37,25 @@ Each door shows the same picture from its own side.
 | `roadmap/` | one roadmap per door and the shared rules |
 | `coordination/` | who works on what, and a daily log; the one place where everyone writes in their own language |
 
+## Guard in a repository's CI
+
+Each world's concept scheme lives in that world's repository (path in `terms/sources.json`); the mappings live here. A change to a scheme file must therefore be checked against the register before it is merged, from within the repository that changes it. The step checks out this repository next to the working copy and runs the guard with the working copy's file in place of the pinned source:
+
+```yaml
+- uses: actions/checkout@v4
+- uses: actions/checkout@v4
+  with:
+    repository: real-life-org/meta
+    path: meta-src            # the register, beside the working copy
+- uses: actions/setup-python@v5
+  with:
+    python-version: "3.12"
+- name: concept scheme matches the shared register
+  run: python3 meta-src/scripts/guard.py --scheme rlnp=terms/rlnp.skos.jsonld
+```
+
+`--scheme WORLD=PATH` can be given more than once. The guard fails on a missing language, a missing source, a dangling mapping, and the same word in two worlds without a mapping; it lists open proposals and convergence tasks. The path per world: `rlnp=terms/rlnp.skos.jsonld`, `rltp=terms/rltp.skos.jsonld`, `rls=docs/reference/rls.skos.jsonld`.
+
 ## The ground rule
 
 **Definitions never live here.** Each world defines its own terms in its own repository and stays normative for them. This repository holds only what connects them: the picture, the seams, the mappings, the checks.

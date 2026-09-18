@@ -52,6 +52,7 @@ Ein durchgeführter Lauf einer Zeremonie zwischen zwei Menschen. Nie wiederverwe
 Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms)
 
 - same: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
+- same: **[Verification](stack.md#verifikation) `rls:verification`** (Stack)
 
 ## Encounter credential
 *Begegnungs-Credential*

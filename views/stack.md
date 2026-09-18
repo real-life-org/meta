@@ -94,3 +94,17 @@ Quelle: [09-mirror-bridge.md](https://github.com/real-life-org/real-life-stack/b
 
 - gleich: **[Spiegel](network.md#spiegel)** (Netzwerk)
 - verwandt: **[Sichtbarkeit](network.md#sichtbarkeit)** (Netzwerk)
+
+## Verifikation
+*Verification*
+
+Der Ablauf, in dem zwei Menschen eine Begegnung in der App festhalten, etwa per QR-Code; eine eigene Capability des Connectors. Kontakte und Verifikationen sind nicht dasselbe wie Profile.
+
+The flow in which two people record an encounter in the app, for example by QR code; a capability of the connector in its own right. Contacts and verifications are not the same as profiles.
+
+Code: `EncounterVerificationCapable`, `VerificationDialog`
+
+Quelle: [03-capabilities.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/03-capabilities.md), [04-items-relations-groups-spaces.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/04-items-relations-groups-spaces.md)
+
+- gleich: **[Verifikation](network.md#verifikation)** (Netzwerk)
+- gleich: **[Begegnungsvorgang](trust.md#enactment)** (Protokoll)

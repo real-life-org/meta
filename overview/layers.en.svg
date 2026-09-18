@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- The layer picture of Real Life. Source of truth for all three sites. Resolved for language 'en' by scripts/build_layers.py from layers.svg. Do not edit. -->
+<!-- The layer picture of Real Life. Source of truth for all three sites. Bilingual source. Do not embed this file: SVG switch/systemLanguage picks the first language found anywhere in the browser list, not the preferred one. Embed layers.en.svg or layers.de.svg, built by scripts/build_layers.py. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 940 450" font-family="Arial, Liberation Sans, Helvetica, sans-serif" role="img" aria-label="Left: the RLNP terms place and initiative, witnessing, circle, visibility, person and relationship. Right: the Real Life Stack with application, data and the connector socket. Below the socket, side by side: RLTP with the layers identity, encounter and relationship, access; and Supabase as one column across all three, other backends possible. Labelled edges connect each RLNP term with the layer that constructs it.">
         <rect width="940" height="450" fill="#ffffff"/>
         <defs>

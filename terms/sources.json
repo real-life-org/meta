@@ -1,23 +1,26 @@
 {
- "comment": "Where each world's concept scheme lives. Until the three repos carry their own file (ref is null), the seed copies in this repo are used.",
+ "comment": "Where each world's concept scheme lives. Until the three repos carry their own file (ref is null), the seed copies in this repo are used. 'branch' is the default branch, used for edit links.",
  "schemes": {
   "rlnp": {
    "repo": "real-life-org/real-life-network-protocol",
    "path": "terms/rlnp.skos.jsonld",
    "ref": null,
-   "seed": "terms/seed/rlnp.skos.jsonld"
+   "seed": "terms/seed/rlnp.skos.jsonld",
+   "branch": "main"
   },
   "rltp": {
    "repo": "real-life-org/rltp-spec",
    "path": "terms/rltp.skos.jsonld",
    "ref": null,
-   "seed": "terms/seed/rltp.skos.jsonld"
+   "seed": "terms/seed/rltp.skos.jsonld",
+   "branch": "main"
   },
   "rls": {
    "repo": "real-life-org/real-life-stack",
    "path": "docs/reference/rls.skos.jsonld",
    "ref": null,
-   "seed": "terms/seed/rls.skos.jsonld"
+   "seed": "terms/seed/rls.skos.jsonld",
+   "branch": "master"
   }
  }
 }

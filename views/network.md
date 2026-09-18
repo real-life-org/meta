@@ -65,19 +65,6 @@ Quelle: [real-life-network-protocol.md#61-mensch](https://github.com/real-life-o
 
 > The profile is the view of a person, not the person.
 
-## Mitglied
-*Member*
-**Vorschlag, noch nicht in der Spec**
-
-Vorgeschlagen: wer zu einem Space gehört. Gilt für den Space, nicht für das Netzwerk: Zugehörigkeit zum Netzwerk lebt in Beziehungen, nicht in Listen (6.1).
-
-Proposed: who belongs to a space. Applies to the space, not to the network: belonging to the network lives in relationships, not in lists (6.1).
-
-Quelle: [real-life-network-protocol.md#64-kreis](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#64-kreis)
-
-- gleich: **[Mitglied](trust.md#member)** (Protokoll)
-- gleich: **[Mitglied](stack.md#mitglied)** (Stack)
-
 ## Rolle
 *Role*
 

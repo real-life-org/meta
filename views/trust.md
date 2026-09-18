@@ -90,9 +90,8 @@ Zustand im Autoritäts-Log plus Schlüsselbesitz, kein Zertifikat. Eintritt nur 
 Source: [access-layer.md#5-members](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/membership-tasks.md)
 
 - same: **[Member](stack.md#mitglied) `rls:member`** (Stack)
-- same: **[Member](network.md#mitglied) `rlnp:Mitglied`** (Network)
 
-> Converged 2026-09-18 as a proposal: meaning in RLNP, construction in RLTP, read in the Stack.
+> Deliberately without a counterpart in RLNP (2026-09-18): the network knows membership only as what it must not require. Belonging to the network lives in relationships, not in lists; a circle chooses its own form and access, and membership is one of the forms the Stack and the Trust Protocol provide for it.
 
 ## Visibility mode
 *Sichtbarkeitsmodus*

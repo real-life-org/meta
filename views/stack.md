@@ -28,7 +28,6 @@ Code: `_members`, `groupMembers`
 Quelle: [04-items-relations-groups-spaces.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/04-items-relations-groups-spaces.md)
 
 - gleich: **[Mitglied](trust.md#member)** (Protokoll)
-- gleich: **[Mitglied](network.md#mitglied)** (Netzwerk)
 
 ## Personenprofil
 *Person profile*

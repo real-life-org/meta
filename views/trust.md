@@ -6,11 +6,11 @@
 *Anker*
 `rltp:Anchor`
 
-A person's identifier toward one context (did:key). One anchor per relationship; relationships never converge into a person.
+A person's identifier toward one context (did:key). Every enactment of a ceremony runs under a freshly derived pair anchor, a re-encounter too; a standing anchor never appears on the ceremony wire, and anchors never converge into a person.
 
-Kennung einer Person gegenüber einem Kontext (did:key). Je Beziehung ein eigener Anker; Beziehungen laufen nie zu einer Person zusammen.
+Kennung einer Person gegenüber einem Kontext (did:key). Jede Durchführung einer Zeremonie läuft unter einem frisch abgeleiteten Paaranker, auch eine Wiederbegegnung; ein stehender Anker erscheint nie auf dem Zeremoniedraht, und Anker laufen nie zu einer Person zusammen.
 
-Source: [encounter-layer.md#2.2](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#2.2), [identity-layer.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/identity-layer.md)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative), [identity-layer.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/identity-layer.md)
 
 - related: **[Person](network.md#mensch) `rlnp:Mensch`** (Network)
 
@@ -23,7 +23,7 @@ Proposed: a signed, portable statement by one person about another's contributio
 
 Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential.
 
-Source: [README.md](https://github.com/real-life-org/rltp-spec/blob/main/README.md)
+Source: [README.md#alignment-with-the-toip-dtgwg](https://github.com/real-life-org/rltp-spec/blob/main/README.md#alignment-with-the-toip-dtgwg)
 
 - target: same as: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
 - target: same as: **[Role](network.md#rolle) `rlnp:Rolle`** (Network)
@@ -37,7 +37,7 @@ The relation between two anchors constituted by the encounter credentials betwee
 
 Die Relation zwischen zwei Ankern, gebildet aus den Begegnungs-Credentials zwischen ihnen; eingehend, ausgehend oder beidseitig. Eine Kante je Ankerpaar.
 
-Source: [encounter-layer.md#4.2](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#4.2)
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
 
 - narrower than: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
 
@@ -49,7 +49,7 @@ One performed run of a ceremony between two people. Never reused; complete when 
 
 Ein durchgeführter Lauf einer Zeremonie zwischen zwei Menschen. Nie wiederverwendet; vollständig, wenn beide Seiten ihre Aufzeichnung halten.
 
-Source: [encounter-layer.md#2.2](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#2.2)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms)
 
 - same: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 
@@ -61,7 +61,7 @@ The immutable credential in which one party records that they recognized another
 
 Unveränderliches Credential, in dem eine Partei festhält, dass sie eine andere erkannt hat. Ausgestellt von einer Partei über die andere, offline prüfbar.
 
-Source: [encounter-layer.md#7](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#7)
+Source: [encounter-layer.md#7-the-encounter-credential](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#7-the-encounter-credential)
 
 - related: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 - related: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
@@ -74,7 +74,7 @@ A collective actor with members, a policy, an authority log, and documents. Its 
 
 Kollektiver Akteur mit Mitgliedern, Policy, Autoritäts-Log und Dokumenten. Identität ist der Digest der Genesis-Operation, Adresse die Gruppen-DID.
 
-Source: [access-layer.md#2](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#2)
+Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#2-conventions-and-terminology)
 
 - same: **[Space](network.md#space) `rlnp:Space`** (Network)
 - same: **[Space](stack.md#space) `rls:space`** (Stack)
@@ -87,7 +87,7 @@ A fact in the authority log plus key possession, not a certificate. Entered only
 
 Zustand im Autoritäts-Log plus Schlüsselbesitz, kein Zertifikat. Eintritt nur durch explizite, kryptografisch gebundene Zustimmung.
 
-Source: [access-layer.md#5](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#5), [membership-tasks.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/membership-tasks.md)
+Source: [access-layer.md#5-members](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/membership-tasks.md)
 
 - same: **[Member](stack.md#mitglied) `rls:member`** (Stack)
 - same: **[Member](network.md#mitglied) `rlnp:Mitglied`** (Network)
@@ -102,6 +102,6 @@ The mode in which a group is readable from outside; publication runs through the
 
 Der Modus, in dem eine Gruppe nach außen lesbar ist; Veröffentlichung läuft über den Publikations-Port (offene Sichtbarkeit: weltlesbar).
 
-Source: [access-layer.md#VisibilityMode](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#VisibilityMode), [network-visibility.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/network-visibility.md)
+Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/network-visibility.md)
 
 - related: **[Visibility](network.md#sichtbarkeit) `rlnp:Sichtbarkeit`** (Network)

@@ -2,7 +2,7 @@
 
 What belongs to none of the three parts alone: the layer picture, the seams between the parts, the shared term register, the roadmaps, and team coordination.
 
-![The layer picture: RLNP beside the stack, RLTP filling the lower three layers](overview/layers.svg)
+![The layer picture: RLNP beside the stack, RLTP filling the lower three layers](overview/layers.en.svg)
 
 ## The three parts
 
@@ -30,7 +30,7 @@ Each door shows the same picture from its own side.
 
 | Path | Content |
 |---|---|
-| `overview/` | the layer picture (`layers.svg`, bilingual), the cells, the seams |
+| `overview/` | the layer picture: `layers.svg` is the bilingual source, `layers.en.svg` and `layers.de.svg` are resolved by `scripts/build_layers.py`; the cells; the seams |
 | `terms/` | the federated term register: shared context, mappings between the three concept schemes, sources, and seed copies until each world carries its own file |
 | `scripts/` | `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |

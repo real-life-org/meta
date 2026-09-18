@@ -15,7 +15,8 @@ jobs:
           python-version: "3.12"
       - name: Check the term register
         run: python3 scripts/guard.py
-      - name: Views are up to date
+      - name: Generated files are up to date
         run: |
           python3 scripts/render.py
-          git diff --exit-code -- views/
+          python3 scripts/build_layers.py
+          git diff --exit-code -- views/ overview/

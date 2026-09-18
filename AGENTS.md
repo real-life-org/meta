@@ -28,9 +28,10 @@ Never add a definition to `terms/mappings.skos.jsonld`. It carries relations and
 ```
 python3 scripts/guard.py     # checks; exit 1 on errors
 python3 scripts/render.py    # regenerates views/
+python3 scripts/build_layers.py  # resolves overview/layers.svg into layers.en.svg and layers.de.svg
 ```
 
-Run both before opening a pull request. `views/` is generated; never edit it by hand.
+Run all three before opening a pull request. `views/` and `overview/layers.{en,de}.svg` are generated; never edit them by hand. Edit the bilingual source `overview/layers.svg` instead.
 
 ## Language
 

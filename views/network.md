@@ -36,15 +36,15 @@ Quelle: [real-life-network-protocol.md#6.2](https://github.com/real-life-org/rea
 ## Kreis
 *Circle*
 
-Wiederkehrender Begegnungsraum. Braucht keine formelle Mitgliedschaft; wählt Form und Zugang selbst. Kreise verbinden sich durch Menschen, nicht durch übergeordnete Kreise.
+Wiederkehrender Begegnungsraum. Wählt Form und Zugang selbst. Kreise verbinden sich durch Menschen, nicht durch übergeordnete Kreise.
 
-A recurring space of encounter. Needs no formal membership; chooses its own form and access. Circles connect through people, not through parent circles.
+A recurring space of encounter. Chooses its own form and access. Circles connect through people, not through parent circles.
 
 Quelle: [real-life-network-protocol.md#6.4](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.4)
 
 - verwandt: **[Space](network.md#space)** (Netzwerk)
 
-> A circle is the people, a space is the vessel. A circle gives itself a space when it takes form. Deliberately not the same.
+> A circle is the people, a space is the vessel. A circle chooses its own form and access; a space is meant to carry exactly that: publicly visible, open for anyone to post, or by invitation. Whether the two converge is open (2026-09-18).
 
 ## Mensch
 *Person*

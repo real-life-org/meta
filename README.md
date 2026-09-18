@@ -2,7 +2,7 @@
 
 What belongs to none of the three parts alone: the layer picture, the seams between the parts, the shared term register, the roadmaps, and team coordination.
 
-![The layer picture: RLNP beside the stack, RLTP filling the lower three layers](overview/layers.en.svg)
+![The layer picture: RLNP beside the stack, RLTP filling the lower three layers](overview/layers.adaptive.svg)
 
 ## The three parts
 

@@ -5,15 +5,15 @@
 ## Begegnung
 *Encounter*
 
-Zwei Menschen begegnen sich, real oder digital, tauschen aus, wer sie sind, und bleiben verbunden, wenn es stimmig ist. Der Grundstoff des Netzwerks: Ein Mensch wird Teil davon, sobald er in Beziehung tritt.
+Zwei Menschen begegnen sich, real oder digital, tauschen aus, wer sie sind, und bleiben verbunden, wenn es stimmig ist. Begegnung wiederholt sich und ist der Normalfall des Netzwerks: Ein Mensch wird Teil davon, sobald er in Beziehung tritt.
 
-Two people meet, in person or digitally, exchange who they are, and stay connected if it fits. The raw material of the network: a person becomes part of it the moment they enter a relationship.
+Two people meet, in person or digitally, exchange who they are, and stay connected if it fits. Encounters repeat and are the normal case of the network: a person becomes part of it the moment they enter a relationship.
 
 Quelle: [real-life-network-protocol.md#81-menschen-kennenlernen](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#81-menschen-kennenlernen)
 
 - verwandt: **[Verifikation](network.md#verifikation)** (Netzwerk)
 
-> The event itself, deliberately without counterpart in the Stack or the Trust Protocol: the encounter belongs to the people; the Stack verifies it, the protocol proves it.
+> The event itself, repeated and ordinary, deliberately without counterpart in the Stack or the Trust Protocol: the encounter belongs to the people. Verification is the one-time act that records the relationship; later encounters need none.
 
 ## Bezeugen
 *Witnessing*
@@ -109,9 +109,9 @@ Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://gith
 ## Verifikation
 *Verification*
 
-Bestätigung einer realen Begegnung oder Identitätsbeziehung. Bedeutet nicht allgemeine Vertrauenswürdigkeit.
+Der einmalige Akt, in dem zwei Menschen bestätigen, dass sie einander als diese Person erlebt haben, meist bei der ersten Begegnung; danach begegnet man sich einfach. Bedeutet nicht allgemeine Vertrauenswürdigkeit.
 
-Confirmation of a real encounter or identity relationship. Does not mean general trustworthiness.
+The one-time act in which two people confirm that they have met each other as this person, usually at the first encounter; after that, they simply meet. Does not mean general trustworthiness.
 
 Quelle: [real-life-network-protocol.md#83-menschen-verifizieren](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#83-menschen-verifizieren)
 
@@ -120,4 +120,4 @@ Quelle: [real-life-network-protocol.md#83-menschen-verifizieren](https://github.
 - verwandt: **[Begegnungs-Credential](trust.md#encounter-credential)** (Protokoll)
 - verwandt: **[Begegnung](network.md#begegnung)** (Netzwerk)
 
-> One act in three parts (2026-09-18): the encounter happens in the network, the Stack verifies it in the app, the Trust Protocol constructs that verification as an enactment. The encounter credential is its result.
+> One act in three parts (2026-09-18): the encounter happens in the network, the Stack verifies it in the app, the Trust Protocol constructs that verification as an enactment; the encounter credential is its result. Socially it happens once per relationship; the protocol allows repeated enactments, each with a fresh anchor, all landing on the same edge.

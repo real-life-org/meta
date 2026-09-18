@@ -94,28 +94,17 @@ Quelle: [real-life-network-protocol.md#613-rolle](https://github.com/real-life-o
 ## Sichtbarkeit
 *Visibility*
 
-Keine Eigenschaft einer Sache, sondern Folge davon, wo sie liegt: im Kreis, gespiegelt oder veröffentlicht.
+Keine Eigenschaft einer Sache, sondern Folge davon, wo sie liegt. Drei Reichweiten: in einem Kreis, in mehreren Kreisen, veröffentlicht. Wer eine Sache in Kreise stellt, entscheidet, in welchen sie liegt, und sieht vorher, wen sie erreicht.
 
-Not a property of a thing but a consequence of where it lies: within a circle, mirrored, or published.
+Not a property of a thing but a consequence of where it lies. Three reaches: within one circle, within several circles, published. Whoever puts a thing into circles decides which ones, and sees beforehand whom it reaches.
 
 Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#616-wie-etwas-sichtbar-wird)
 
 - verwandt: **[Sichtbarkeitsmodus](trust.md#visibility-mode)** (Protokoll)
-- verwandt: **[Spiegel](stack.md#spiegel)** (Stack)
+- verwandt: **[Item in mehreren Spaces](stack.md#item-in-mehreren-spaces)** (Stack)
 - Ziel: gleich mit: **[Sichtbarkeit](stack.md#sichtbarkeit)** (Stack)
 
-> Three ways, three constructions: "within the circle" = RLTP private; "mirrored" = Stack mirror bridge; "published" = RLTP open is only the origin, delivery of open data needs another backend (multi-connector). VisibilityMode covers the first two only.
-
-## Spiegel
-*Mirror*
-
-Lesbare Kopie einer Sache an einem zweiten Ort. Die Sache lebt nur am Ursprung; ein Spiegel schreibt nie zurück. Wer mitwirken soll, braucht Zugang zum Ursprung.
-
-A readable copy of a thing in a second place. The thing lives only at its origin; a mirror never writes back. Whoever is to take part needs access to the origin.
-
-Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#616-wie-etwas-sichtbar-wird)
-
-- gleich: **[Spiegel](stack.md#spiegel)** (Stack)
+> Three reaches, three constructions: "within one circle" is RLTP private; "within several circles" is the Stack's item in several spaces (the RLTP connector builds it as a mirror); "published" is RLTP open at the origin, delivery of open data needs another backend (multi-connector). VisibilityMode covers the first and third only.
 
 ## Verifikation
 *Verification*

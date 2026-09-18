@@ -15,6 +15,19 @@ Quelle: [02-data-interface.md](https://github.com/real-life-org/real-life-stack/
 
 > Deliberately without counterpart in RLNP and RLTP. The connector is pure Stack construction.
 
+## Item in mehreren Spaces
+*Item in several spaces*
+**Vorschlag, noch nicht in der Spec**
+
+Vorgeschlagen: ein Item liegt in mehr als einem Space und hat einen Heimat-Space, der es verantwortet. Wie das gemacht wird, per Zuordnung in einer zentralen Datenbank oder per Kopie mit Brücke bei verteilten Gruppen, entscheidet der Connector.
+
+Proposed: an item lies in more than one space and has a home space responsible for it. How this is done, by association in a central database or by copy with a bridge across distributed groups, is the connector's decision.
+
+Quelle: [09-mirror-bridge.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/09-mirror-bridge.md)
+
+- verwandt: **[Sichtbarkeit](network.md#sichtbarkeit)** (Netzwerk)
+- verwandt: **[Spiegel](stack.md#spiegel)** (Stack)
+
 ## Mitglied
 *Member*
 **Vorschlag, noch nicht in der Spec**
@@ -86,14 +99,15 @@ Quelle: [04-items-relations-groups-spaces.md](https://github.com/real-life-org/r
 ## Spiegel
 *Mirror*
 
-Die Projektion eines Items aus seinem Home-Space. Herkunft, Aktualität und erlaubte Aktionen werden getrennt betrachtet.
+Die Konstruktion des RLTP-Connectors für ein Item in mehreren Spaces: eine Kopie im zweiten Space, weil verschlüsselte Gruppen einander nicht lesen können; Herkunft, Aktualität und erlaubte Aktionen werden getrennt betrachtet. Eine zentrale Datenbank braucht keine Spiegel.
 
-The projection of an item from its home space. Origin, freshness and permitted actions are considered separately.
+The RLTP connector's construction of an item in several spaces: a copy in the second space, because encrypted groups cannot read each other; origin, freshness and permitted actions are considered separately. A central database needs no mirrors.
 
 Quelle: [09-mirror-bridge.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/09-mirror-bridge.md)
 
-- gleich: **[Spiegel](network.md#spiegel)** (Netzwerk)
-- verwandt: **[Sichtbarkeit](network.md#sichtbarkeit)** (Netzwerk)
+- verwandt: **[Item in mehreren Spaces](stack.md#item-in-mehreren-spaces)** (Stack)
+
+> Deliberately without counterpart in RLNP or RLTP: for the person it is simply a thing in several spaces; the mirror exists because the Trust Protocol partitions storage by access boundary. The protocol itself knows only groups and their replication.
 
 ## Verifikation
 *Verification*

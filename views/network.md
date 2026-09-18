@@ -11,7 +11,7 @@ Honouring what a person did or contributed. Recognition, not approval. The perso
 
 Auch: Confirmation, Attestation
 
-Quelle: [real-life-network-protocol.md#8.4](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#8.4)
+Quelle: [real-life-network-protocol.md#84-bezeugen](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#84-bezeugen)
 
 - verwandt: **[Begegnungs-Credential](trust.md#encounter-credential)** (Protokoll)
 - Ziel: gleich mit: **[Attestation](trust.md#attestation)** (Protokoll)
@@ -25,7 +25,7 @@ Soziale Verbindung zwischen Menschen oder zwischen Menschen und Agenten. Entsteh
 
 A social connection between people, or between people and agents. Arises from encounter, communication, collaboration or shared experience.
 
-Quelle: [real-life-network-protocol.md#6.2](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.2)
+Quelle: [real-life-network-protocol.md#62-beziehung](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#62-beziehung)
 
 - allgemeiner als: **[Kante](trust.md#edge)** (Protokoll)
 - Ziel: gleich mit: **[Attestation](trust.md#attestation)** (Protokoll)
@@ -40,7 +40,7 @@ Wiederkehrender Begegnungsraum. Wählt Form und Zugang selbst. Kreise verbinden 
 
 A recurring space of encounter. Chooses its own form and access. Circles connect through people, not through parent circles.
 
-Quelle: [real-life-network-protocol.md#6.4](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.4)
+Quelle: [real-life-network-protocol.md#64-kreis](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#64-kreis)
 
 - verwandt: **[Space](network.md#space)** (Netzwerk)
 
@@ -53,7 +53,7 @@ Kleinste Einheit des Netzwerks. Kenntlich nicht durch einen Verzeichniseintrag, 
 
 The smallest unit of the network. Known not by a directory entry but by those who know them. Identity belongs to the person.
 
-Quelle: [real-life-network-protocol.md#6.1](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.1)
+Quelle: [real-life-network-protocol.md#61-mensch](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#61-mensch)
 
 - verwandt: **[Anker](trust.md#anchor)** (Protokoll)
 - verwandt: **[Personenprofil](stack.md#personenprofil)** (Stack)
@@ -70,7 +70,7 @@ Vorgeschlagen: wer zu einem Space gehört. Gilt für den Space, nicht für das N
 
 Proposed: who belongs to a space. Applies to the space, not to the network: belonging to the network lives in relationships, not in lists (6.1).
 
-Quelle: [real-life-network-protocol.md#6.4](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.4)
+Quelle: [real-life-network-protocol.md#64-kreis](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#64-kreis)
 
 - gleich: **[Mitglied](trust.md#member)** (Protokoll)
 - gleich: **[Mitglied](stack.md#mitglied)** (Stack)
@@ -82,7 +82,7 @@ Verantwortung, die ein Mensch gegenüber einem Kreis übernimmt. Sagt zu, dass e
 
 Responsibility a person takes on toward a circle. A promise that something happens. Voluntary, returnable, not a rank.
 
-Quelle: [real-life-network-protocol.md#6.13](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.13)
+Quelle: [real-life-network-protocol.md#613-rolle](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#613-rolle)
 
 - Ziel: gleich mit: **[Attestation](trust.md#attestation)** (Protokoll)
 
@@ -95,7 +95,7 @@ Keine Eigenschaft einer Sache, sondern Folge davon, wo sie liegt: im Kreis, gesp
 
 Not a property of a thing but a consequence of where it lies: within a circle, mirrored, or published.
 
-Quelle: [real-life-network-protocol.md#6.16](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.16)
+Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#616-wie-etwas-sichtbar-wird)
 
 - verwandt: **[Sichtbarkeitsmodus](trust.md#visibility-mode)** (Protokoll)
 - verwandt: **[Spiegel](stack.md#spiegel)** (Stack)
@@ -125,7 +125,7 @@ Lesbare Kopie einer Sache an einem zweiten Ort. Die Sache lebt nur am Ursprung; 
 
 A readable copy of a thing in a second place. The thing lives only at its origin; a mirror never writes back. Whoever is to take part needs access to the origin.
 
-Quelle: [real-life-network-protocol.md#6.16](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.16)
+Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#616-wie-etwas-sichtbar-wird)
 
 - gleich: **[Spiegel](stack.md#spiegel)** (Stack)
 
@@ -136,7 +136,7 @@ Bestätigung einer realen Begegnung oder Identitätsbeziehung. Bedeutet nicht al
 
 Confirmation of a real encounter or identity relationship. Does not mean general trustworthiness.
 
-Quelle: [real-life-network-protocol.md#8.3](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#8.3)
+Quelle: [real-life-network-protocol.md#83-menschen-verifizieren](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#83-menschen-verifizieren)
 
 - gleich: **[Begegnungsvorgang](trust.md#enactment)** (Protokoll)
 - verwandt: **[Begegnungs-Credential](trust.md#encounter-credential)** (Protokoll)

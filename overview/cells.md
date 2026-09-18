@@ -1,0 +1,19 @@
+# What each cell answers, and what it never answers · Was jede Zelle beantwortet, und was nie
+
+The stack handbook's page on rights makes the pattern: *Can the connector? May I? Where does it come from?* Three questions that must never be collapsed into one check. The same holds for the whole picture.
+
+Die Rechte-Seite des Stack-Handbuchs macht das Muster vor: *Kann der Connector? Darf ich? Woher stammt es?* Drei Fragen, die nie zu einer Prüfung verkürzt werden dürfen. Dasselbe gilt für das ganze Bild.
+
+| Cell · Zelle | Answers · Beantwortet | Never answers · Beantwortet nie |
+|---|---|---|
+| **RLNP** · meaning · Bedeutung | What a circle, a role, a promise, an encounter is. Which norms apply. Where something becomes visible. · Was ein Kreis, eine Rolle, ein Versprechen, eine Begegnung ist. Welche Normen gelten. Wohin etwas sichtbar wird. | Which format, signature or key. It states requirements and points to the construction. · Welches Format, welche Signatur, welcher Schlüssel. Es nennt Anforderungen und verweist auf die Konstruktion. |
+| **1 · Identity** · Identität (RLTP) | Who speaks: identifier, devices, recovery. · Wer spricht: Kennung, Geräte, Wiederherstellung. | Whether this person is trustworthy. · Ob diese Person vertrauenswürdig ist. |
+| **2 · Encounter and relationship** · Begegnung und Beziehung (RLTP) | That two people really met, that one gives the other trust, and what they witness for each other. Credentials between two people, verifiable offline. · Dass sich zwei Menschen wirklich getroffen haben, dass einer dem anderen Vertrauen gibt, und was sie einander bezeugen. Nachweise zwischen zwei Menschen, offline prüfbar. | What this relationship means socially and which norms apply to it. That is RLNP. · Was diese Beziehung sozial bedeutet und welche Normen für sie gelten. Das steht bei RLNP. |
+| **3 · Access** · Zugang (RLTP) | Who is in a group, since when, under which rule. Membership is state in the group log plus key possession, not a certificate. · Wer in einer Gruppe ist, seit wann, unter welcher Regel. Mitgliedschaft ist Zustand im Gruppen-Log plus Schlüsselbesitz, kein Zertifikat. | What the group is about. Which templates it uses. · Was die Gruppe inhaltlich ist. Welche Vorlagen sie benutzt. |
+| **Connector** · Steckstelle (RLS) | What the backend below actually provides, declared as capabilities. · Was das Backend darunter wirklich bietet, als Capabilities zugesagt. | Anything the backend has not declared. Layer 4 must assume nothing beyond a declared capability. · Alles, was das Backend nicht zugesagt hat. Schicht 4 darf nichts über eine zugesagte Capability hinaus annehmen. |
+| **4 · Data** · Daten (RLS) | What an item looks like: intention, facets, relations, tags. Which domain model a space brings and carries with it. · Wie ein Item aussieht: Intention, Facetten, Relationen, Tags. Welches Domänenmodell ein Space mitbringt und mit ihm reist. | Rights. A relation on layer 4 never carries a permission. Membership is read from below, never stored. · Rechte. Eine Relation auf Schicht 4 trägt nie eine Berechtigung. Mitgliedschaft wird von unten gelesen, nie gespeichert. |
+| **5 · Application** · Anwendung (RLS) | Which modules, views, forms and filters a space shows, derived from the schema, not programmed per space. · Welche Module, Ansichten, Formulare, Filter ein Space zeigt, aus dem Schema abgeleitet, nicht je Space programmiert. | What an item is. Whether someone is a member. · Was ein Item ist. Ob jemand Mitglied ist. |
+
+The boundary "data yes, code no" lies between 4 and 5: a space defines templates, facets, relations and filters as data. Widgets and renderers come from the toolkit.
+
+Die Grenze „Daten ja, Code nein" liegt zwischen 4 und 5: Ein Space definiert Vorlagen, Facetten, Relationen und Filter als Daten. Widgets und Renderer kommen aus dem Toolkit.

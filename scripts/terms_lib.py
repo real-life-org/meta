@@ -13,12 +13,36 @@ def lang(vals, l):
 
 def aslist(x): return x if isinstance(x, list) else [x]
 
-def load():
+def scheme_file(world, s, overrides):
+    """Which file carries this world's concept scheme: an override (a repo checking its own working copy),
+    else the seed copy while ref is null, else the pinned path."""
+    if world in overrides: return pathlib.Path(overrides[world])
+    return ROOT / (s["seed"] if s.get("ref") is None else s["path"])
+
+def parse_overrides(argv):
+    """--scheme WORLD=PATH (repeatable): use PATH for WORLD instead of the pinned source.
+    Anything else is an error: a misspelt option must not silently check the pinned file instead."""
+    USAGE = "usage: guard.py [--scheme WORLD=PATH ...]"
+    ov = {}; it = iter(argv)
+    for a in it:
+        if a == "--scheme": a = "--scheme=" + next(it, "")
+        if not a.startswith("--scheme="): raise SystemExit(f"unexpected argument {a!r}\n{USAGE}")
+        w, _, f = a[len("--scheme="):].partition("=")
+        if not w or not f: raise SystemExit(f"--scheme needs WORLD=PATH, got {a[len('--scheme='):]!r}\n{USAGE}")
+        if w in ov: raise SystemExit(f"--scheme given twice for {w!r}")
+        ov[w] = f
+    return ov
+
+def load(overrides=None):
     """Returns (concepts, links, notes, problems, warnings)."""
+    overrides = overrides or {}
     src = json.load(open(ROOT / "terms/sources.json"))["schemes"]
+    unknown = set(overrides) - set(src)
+    if unknown: raise SystemExit(f"--scheme names unknown world(s) {sorted(unknown)}; known: {sorted(src)}")
     concepts, problems, warnings = {}, [], []
     for w, s in src.items():
-        f = ROOT / (s["seed"] if s.get("ref") is None else s["path"])
+        f = scheme_file(w, s, overrides)
+        if not f.exists(): problems.append(f"{w}: scheme file {f} not found"); continue
         for n in json.load(open(f))["@graph"]:
             if n.get("@type") != "skos:Concept": continue
             n["_world"] = w; concepts[n["@id"]] = n

@@ -3,8 +3,8 @@
 from terms_lib import load, lang, aslist, ROOT
 concepts, links, notes, problems, warnings = load()
 if problems: raise SystemExit("register has errors; run guard.py first")
-REL = {"de": {"skos:exactMatch":"gleich","skos:closeMatch":"nahezu gleich","skos:relatedMatch":"verwandt","skos:broadMatch":"allgemeiner","skos:narrowMatch":"spezieller","rl:falseFriend":"falscher Freund","rl:convergesWith":"Ziel: gleich mit"},
-       "en": {"skos:exactMatch":"same","skos:closeMatch":"close","skos:relatedMatch":"related","skos:broadMatch":"broader","skos:narrowMatch":"narrower","rl:falseFriend":"false friend","rl:convergesWith":"target: same as"}}
+REL = {"de": {"skos:exactMatch":"gleich","skos:closeMatch":"nahezu gleich","skos:relatedMatch":"verwandt","skos:narrowMatch":"allgemeiner als","skos:broadMatch":"spezieller als","rl:falseFriend":"falscher Freund","rl:convergesWith":"Ziel: gleich mit"},
+       "en": {"skos:exactMatch":"same","skos:closeMatch":"close","skos:relatedMatch":"related","skos:narrowMatch":"broader than","skos:broadMatch":"narrower than","rl:falseFriend":"false friend","rl:convergesWith":"target: same as"}}
 WORLD = {"de": {"rlnp":"Netzwerk","rltp":"Protokoll","rls":"Stack"}, "en": {"rlnp":"Network","rltp":"Protocol","rls":"Stack"}}
 PAGE = {"rlnp":"network.md","rltp":"trust.md","rls":"stack.md"}; PRIMARY = {"rlnp":"de","rltp":"en","rls":"de"}
 

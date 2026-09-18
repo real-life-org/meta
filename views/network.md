@@ -27,7 +27,7 @@ A social connection between people, or between people and agents. Arises from en
 
 Quelle: [real-life-network-protocol.md#6.2](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#6.2)
 
-- spezieller: **[Kante](trust.md#edge)** (Protokoll)
+- allgemeiner als: **[Kante](trust.md#edge)** (Protokoll)
 - Ziel: gleich mit: **[Attestation](trust.md#attestation)** (Protokoll)
 - falscher Freund: **[Relation](stack.md#relation)** (Stack)
 

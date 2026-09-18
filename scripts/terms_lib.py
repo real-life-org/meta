@@ -2,6 +2,8 @@
 import json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MAPREL = ["skos:exactMatch","skos:closeMatch","skos:relatedMatch","skos:broadMatch","skos:narrowMatch","rl:convergesWith"]
+# "A skos:narrowMatch B" states that B is narrower than A. Seen from B, the relation is broadMatch.
+INVERSE = {"skos:narrowMatch": "skos:broadMatch", "skos:broadMatch": "skos:narrowMatch"}
 
 def lang(vals, l):
     for v in (vals if isinstance(vals, list) else [vals]):
@@ -32,7 +34,7 @@ def load():
         for rel in MAPREL + ["rl:falseFriend"]:
             for b in aslist(m.get(rel, [])):
                 if b not in concepts: problems.append(f"{a} {rel} -> unknown concept {b}"); continue
-                links[a].append((rel, b)); links[b].append((rel, a))
+                links[a].append((rel, b)); links[b].append((INVERSE.get(rel, rel), a))
     by_label = {}
     for c in concepts.values():
         for l in ("de", "en"):

@@ -39,7 +39,7 @@ Die Relation zwischen zwei Ankern, gebildet aus den Begegnungs-Credentials zwisc
 
 Source: [encounter-layer.md#4.2](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#4.2)
 
-- narrower: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
+- narrower than: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
 
 ## Enactment
 *Begegnungsvorgang*

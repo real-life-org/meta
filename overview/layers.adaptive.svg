@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Experimental standalone version: follows the browser colour scheme (CSS prefers-color-scheme) and the preferred browser language (script reads navigator.languages[0]). Works when opened directly; inside <img> scripts do not run and the English default shows. Built from layers.svg. -->
+<!-- Built by scripts/build_layers.py from layers.svg. Do not edit. Follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script); embedded via <img> it shows English. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 940 450" font-family="Arial, Liberation Sans, Helvetica, sans-serif" role="img" aria-label="Left: the RLNP terms place and initiative, witnessing, circle, visibility, person and relationship. Right: the Real Life Stack with application, data and the connector socket. Below the socket, side by side: RLTP with the layers identity, encounter and relationship, access; and Supabase as one column across all three, other backends possible. Labelled edges connect each RLNP term with the layer that constructs it.">
         <style>
     :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
@@ -11,11 +11,11 @@
     :root[data-lang="de"] .l-en { display:none; }
   </style>
   <script><![CDATA[
-    // Best-match language: first entry of navigator.languages decides (unlike SVG systemLanguage, which takes any match).
+    // Best-match language: navigator.languages[0] decides (unlike SVG systemLanguage, which takes any match).
+    // Runs only when the file is opened as a document; inside <img> the English default shows.
     (function () {
       var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
-      var first = String(langs[0] || "en").toLowerCase();
-      if (first.indexOf("de") === 0) document.documentElement.setAttribute("data-lang", "de");
+      if (String(langs[0] || "en").toLowerCase().indexOf("de") === 0) document.documentElement.setAttribute("data-lang", "de");
     })();
   ]]></script>
   <rect width="940" height="450" fill="var(--bg)"/>

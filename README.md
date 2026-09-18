@@ -30,7 +30,7 @@ Each door shows the same picture from its own side.
 
 | Path | Content |
 |---|---|
-| `overview/` | the layer picture: `layers.en.svg` and `layers.de.svg` are what pages embed; `layers.svg` is the bilingual source they are built from (SVG language switching is unreliable: it takes the first language found anywhere in the browser's list, not the preferred one); the cells; the seams |
+| `overview/` | the layer picture. `layers.svg` is the bilingual source; `scripts/build_layers.py` builds `layers.en.svg` and `layers.de.svg` (fixed language, for pages) and `layers.adaptive.svg` (follows the browser's colour scheme, and its preferred language when opened directly; embedded as an image it shows English). The cells; the seams |
 | `terms/` | the federated term register: shared context, mappings between the three concept schemes, sources, and seed copies until each world carries its own file |
 | `scripts/` | `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |

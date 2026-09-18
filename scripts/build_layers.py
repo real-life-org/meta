@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Resolves the bilingual source overview/layers.svg into overview/layers.en.svg and overview/layers.de.svg.
+"""Builds from the bilingual source overview/layers.svg:
+- layers.en.svg and layers.de.svg: fixed language, for <img> embedding per page language;
+- layers.adaptive.svg: follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script).
 SVG <switch systemLanguage> picks the first child whose language appears anywhere in the viewer's
 preference list, not the best match, so sites embed the resolved file for their page language."""
 import re, pathlib
@@ -21,4 +23,41 @@ def resolve(lang):
                        f"Resolved for language '{lang}' by scripts/build_layers.py from layers.svg. Do not edit.")
 for lang in ("en", "de"):
     (ROOT / f"overview/layers.{lang}.svg").write_text(resolve(lang))
-print("layers.en.svg, layers.de.svg written")
+
+def adaptive():
+    def sw(m):
+        out = []
+        for attrs, inner in re.findall(r'<text([^>]*)>(.*?)</text>', m.group(1), re.S):
+            if 'systemLanguage="de"' in attrs:
+                out.append(f'<text class="l-de"{attrs.replace(" systemLanguage=\"de\"", "")}>{inner}</text>')
+            else:
+                out.append(f'<text class="l-en"{attrs}>{inner}</text>')
+        return "".join(out)
+    a = re.sub(r"<switch>(.*?)</switch>", sw, src, flags=re.S)
+    col = {"#3f7a4e": "--rlnp", "#e6f0e7": "--rlnp-tint", "#2f62c9": "--rltp", "#e5ecfa": "--rltp-tint", "#b36b1c": "--rls",
+           "#f7ecdd": "--rls-tint", "#ffffff": "--bg", "#5f6b64": "--muted", "#1e2622": "--ink"}
+    for h, v in col.items(): a = a.replace(h, f"var({v})")
+    style = """<style>
+    :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
+    }
+    .l-de { display:none; }
+    :root[data-lang="de"] .l-de { display:inline; }
+    :root[data-lang="de"] .l-en { display:none; }
+  </style>
+  <script><![CDATA[
+    // Best-match language: navigator.languages[0] decides (unlike SVG systemLanguage, which takes any match).
+    // Runs only when the file is opened as a document; inside <img> the English default shows.
+    (function () {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+      if (String(langs[0] || "en").toLowerCase().indexOf("de") === 0) document.documentElement.setAttribute("data-lang", "de");
+    })();
+  ]]></script>
+  """
+    a = a.replace('<rect width="940" height="450" fill="var(--bg)"/>', style + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
+    a = re.sub(r"<!-- The layer picture of Real Life\..*?-->", "<!-- Built by scripts/build_layers.py from layers.svg. Do not edit. Follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script); embedded via <img> it shows English. -->", a, flags=re.S)
+    (ROOT / "overview/layers.adaptive.svg").write_text(a)
+
+adaptive()
+print("layers.en.svg, layers.de.svg, layers.adaptive.svg written")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds from the bilingual source overview/layers.svg:
-- layers.en.svg and layers.de.svg: fixed language, for <img> embedding per page language;
+- layers.en.svg and layers.de.svg: fixed language, follow the colour scheme via CSS (works inside <img>);
 - layers.adaptive.svg: follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script).
 SVG <switch systemLanguage> picks the first child whose language appears anywhere in the viewer's
 preference list, not the best match, so sites embed the resolved file for their page language."""
@@ -21,8 +21,21 @@ def resolve(lang):
     out = re.sub(r"<switch>(.*?)</switch>", pick, src, flags=re.S)
     return out.replace("Labels: German for de-language viewers, English otherwise (SVG switch/systemLanguage).",
                        f"Resolved for language '{lang}' by scripts/build_layers.py from layers.svg. Do not edit.")
+COL = {"#3f7a4e": "--rlnp", "#e6f0e7": "--rlnp-tint", "#2f62c9": "--rltp", "#e5ecfa": "--rltp-tint", "#b36b1c": "--rls",
+       "#f7ecdd": "--rls-tint", "#ffffff": "--bg", "#5f6b64": "--muted", "#1e2622": "--ink"}
+THEME = """<style>
+    :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
+    }
+  </style>
+  """
+def themed(svg):
+    for h, v in COL.items(): svg = svg.replace(h, f"var({v})")
+    return svg.replace('<rect width="940" height="450" fill="var(--bg)"/>', THEME + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
+
 for lang in ("en", "de"):
-    (ROOT / f"overview/layers.{lang}.svg").write_text(resolve(lang))
+    (ROOT / f"overview/layers.{lang}.svg").write_text(themed(resolve(lang)))
 
 def adaptive():
     def sw(m):
@@ -34,9 +47,7 @@ def adaptive():
                 out.append(f'<text class="l-en"{attrs}>{inner}</text>')
         return "".join(out)
     a = re.sub(r"<switch>(.*?)</switch>", sw, src, flags=re.S)
-    col = {"#3f7a4e": "--rlnp", "#e6f0e7": "--rlnp-tint", "#2f62c9": "--rltp", "#e5ecfa": "--rltp-tint", "#b36b1c": "--rls",
-           "#f7ecdd": "--rls-tint", "#ffffff": "--bg", "#5f6b64": "--muted", "#1e2622": "--ink"}
-    for h, v in col.items(): a = a.replace(h, f"var({v})")
+    for h, v in COL.items(): a = a.replace(h, f"var({v})")
     style = """<style>
     :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
     @media (prefers-color-scheme: dark) {

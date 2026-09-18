@@ -20,14 +20,17 @@ def scheme_file(world, s, overrides):
     return ROOT / (s["seed"] if s.get("ref") is None else s["path"])
 
 def parse_overrides(argv):
-    """--scheme WORLD=PATH (repeatable): use PATH for WORLD instead of the pinned source."""
+    """--scheme WORLD=PATH (repeatable): use PATH for WORLD instead of the pinned source.
+    Anything else is an error: a misspelt option must not silently check the pinned file instead."""
+    USAGE = "usage: guard.py [--scheme WORLD=PATH ...]"
     ov = {}; it = iter(argv)
     for a in it:
         if a == "--scheme": a = "--scheme=" + next(it, "")
-        if a.startswith("--scheme="):
-            w, _, f = a[len("--scheme="):].partition("=")
-            if not w or not f: raise SystemExit("usage: --scheme WORLD=PATH")
-            ov[w] = f
+        if not a.startswith("--scheme="): raise SystemExit(f"unexpected argument {a!r}\n{USAGE}")
+        w, _, f = a[len("--scheme="):].partition("=")
+        if not w or not f: raise SystemExit(f"--scheme needs WORLD=PATH, got {a[len('--scheme='):]!r}\n{USAGE}")
+        if w in ov: raise SystemExit(f"--scheme given twice for {w!r}")
+        ov[w] = f
     return ov
 
 def load(overrides=None):

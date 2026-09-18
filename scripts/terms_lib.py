@@ -15,9 +15,9 @@ def aslist(x): return x if isinstance(x, list) else [x]
 
 def scheme_file(world, s, overrides):
     """Which file carries this world's concept scheme: an override (a repo checking its own working copy),
-    else the seed copy while ref is null, else the pinned path."""
+    else the seed copy while ref is null, else the pinned file under worlds/<world> (scripts/fetch_worlds.py)."""
     if world in overrides: return pathlib.Path(overrides[world])
-    return ROOT / (s["seed"] if s.get("ref") is None else s["path"])
+    return ROOT / (s["seed"] if s.get("ref") is None else f"worlds/{world}/{s['path']}")
 
 def parse_overrides(argv):
     """--scheme WORLD=PATH (repeatable): use PATH for WORLD instead of the pinned source.
@@ -42,7 +42,9 @@ def load(overrides=None):
     concepts, problems, warnings = {}, [], []
     for w, s in src.items():
         f = scheme_file(w, s, overrides)
-        if not f.exists(): problems.append(f"{w}: scheme file {f} not found"); continue
+        if not f.exists():
+            hint = "" if w in overrides or s.get("ref") is None else " (run scripts/fetch_worlds.py)"
+            problems.append(f"{w}: scheme file {f} not found{hint}"); continue
         for n in json.load(open(f))["@graph"]:
             if n.get("@type") != "skos:Concept": continue
             n["_world"] = w; concepts[n["@id"]] = n

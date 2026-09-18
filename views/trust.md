@@ -23,7 +23,7 @@ Proposed: a signed, portable statement by one person about another's contributio
 
 Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential.
 
-Source: [README.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/README.md)
+Source: [README.md](https://github.com/real-life-org/rltp-spec/blob/main/README.md)
 
 - target: same as: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
 - target: same as: **[Role](network.md#rolle) `rlnp:Rolle`** (Network)

@@ -1,5 +1,5 @@
 {
- "comment": "Where each world's concept scheme lives. Until the three repos carry their own file (ref is null), the seed copies in this repo are used. 'branch' is the default branch, used for edit links.",
+ "comment": "Where each world's concept scheme lives: repository, file, pinned commit. scripts/fetch_worlds.py checks the pinned commit out under worlds/<world>. While a world has no file of its own yet (ref is null), the seed copy in this repository is used. 'branch' is the default branch, used for edit links.",
  "schemes": {
   "rlnp": {
    "repo": "real-life-org/real-life-network-protocol",

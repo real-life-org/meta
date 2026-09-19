@@ -31,15 +31,15 @@ Each door shows the same picture from its own side.
 | Path | Content |
 |---|---|
 | `overview/` | the layer picture and `parts.json` (the three parts in one sentence and three points each, source of the gate page at real-life.org). `layers.svg` is the bilingual source; `scripts/build_layers.py` builds `layers.en.svg` and `layers.de.svg` (fixed language, for pages) and `layers.adaptive.svg` (follows the browser's colour scheme, and its preferred language when opened directly; embedded as an image it shows English). The cells; the seams |
-| `terms/` | the federated term register: shared context, mappings between the three concept schemes, sources, and seed copies until each world carries its own file |
-| `scripts/` | `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
+| `terms/` | the federated term register: shared context, mappings between the three concept schemes, and `sources.json`, which pins each world's concept scheme to a commit in its own repository (seed copies remain only for worlds that have no file of their own yet) |
+| `scripts/` | `fetch_worlds.py` checks the pinned concept schemes out under `worlds/` (not committed); `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |
 | `roadmap/` | one roadmap per door and the shared rules |
 | `coordination/` | who works on what, and a daily log; the one place where everyone writes in their own language |
 
 ## Guard in a repository's CI
 
-Each world's concept scheme lives in that world's repository (path in `terms/sources.json`); the mappings live here. A change to a scheme file must therefore be checked against the register before it is merged, from within the repository that changes it. The step checks out this repository next to the working copy and runs the guard with the working copy's file in place of the pinned source:
+Each world's concept scheme lives in that world's repository (path in `terms/sources.json`); the mappings live here. A change to a scheme file must therefore be checked against the register before it is merged, from within the repository that changes it. The step checks out this repository next to the working copy, fetches the worlds this repository pins, and runs the guard with the working copy's file in place of the pinned source:
 
 ```yaml
 - uses: actions/checkout@v4
@@ -50,6 +50,8 @@ Each world's concept scheme lives in that world's repository (path in `terms/sou
 - uses: actions/setup-python@v5
   with:
     python-version: "3.12"
+- name: fetch the concept schemes meta pins
+  run: python3 meta-src/scripts/fetch_worlds.py
 - name: concept scheme matches the shared register
   run: python3 meta-src/scripts/guard.py --scheme rlnp=terms/rlnp.skos.jsonld
 ```

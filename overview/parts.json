@@ -14,8 +14,8 @@
     {
       "id": "network",
       "name": {
-        "de": "Real Life Netzwerk",
-        "en": "Real Life Network"
+        "de": "Real Life Network Protocol",
+        "en": "Real Life Network Protocol"
       },
       "url": "https://reallife.network",
       "sentence": {

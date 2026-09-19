@@ -31,7 +31,7 @@ Each door shows the same picture from its own side.
 | Path | Content |
 |---|---|
 | `overview/` | the layer picture and `parts.json` (the three parts in one sentence and three points each, source of the gate page at real-life.org). `layers.svg` is the bilingual source; `scripts/build_layers.py` builds `layers.en.svg` and `layers.de.svg` (fixed language, for pages) and `layers.adaptive.svg` (follows the browser's colour scheme, and its preferred language when opened directly; embedded as an image it shows English). The cells; the seams |
-| `terms/` | the federated term register: shared context, mappings between the three concept schemes, and `sources.json`, which pins each world's concept scheme to a commit in its own repository (seed copies remain only for worlds that have no file of their own yet) |
+| `terms/` | the federated term register: shared context, mappings between the three concept schemes, and `sources.json`, which pins each world's concept scheme to a commit in its own repository; `scripts/fetch_worlds.py` checks the pinned files out under `worlds/` (not committed) |
 | `scripts/` | `fetch_worlds.py` checks the pinned concept schemes out under `worlds/` (not committed); `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |
 | `roadmap/` | one roadmap per door and the shared rules |

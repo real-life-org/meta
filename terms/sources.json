@@ -1,25 +1,22 @@
 {
- "comment": "Where each world's concept scheme lives: repository, file, pinned commit. scripts/fetch_worlds.py checks the pinned commit out under worlds/<world>. While a world has no file of its own yet (ref is null), the seed copy in this repository is used. 'branch' is the default branch, used for edit links.",
+ "comment": "Where each world's concept scheme lives: repository, file, pinned commit. scripts/fetch_worlds.py checks the pinned commit out under worlds/<world>; guard, renderer and the site read from there. 'branch' is the default branch, used for edit links.",
  "schemes": {
   "rlnp": {
    "repo": "real-life-org/real-life-network-protocol",
    "path": "terms/rlnp.skos.jsonld",
-   "ref": null,
-   "seed": "terms/seed/rlnp.skos.jsonld",
+   "ref": "9604daa4accff5fe8aba9b47868e0d06f8974a53",
    "branch": "main"
   },
   "rltp": {
    "repo": "real-life-org/rltp-spec",
    "path": "terms/rltp.skos.jsonld",
-   "ref": null,
-   "seed": "terms/seed/rltp.skos.jsonld",
+   "ref": "03f9d3e3e6e40c7952863ef1f8b31250b331753d",
    "branch": "main"
   },
   "rls": {
    "repo": "real-life-org/real-life-stack",
    "path": "docs/reference/rls.skos.jsonld",
-   "ref": null,
-   "seed": "terms/seed/rls.skos.jsonld",
+   "ref": "815da4ba9ee594edd339be74480cac2485d65b7f",
    "branch": "master"
   }
  }

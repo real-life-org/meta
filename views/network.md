@@ -94,9 +94,9 @@ Quelle: [real-life-network-protocol.md#613-rolle](https://github.com/real-life-o
 ## Sichtbarkeit
 *Visibility*
 
-Keine Eigenschaft einer Sache, sondern Folge davon, wo sie liegt. Drei Reichweiten: in einem Kreis, in mehreren Kreisen, veröffentlicht. Wer eine Sache in Kreise stellt, entscheidet, in welchen sie liegt, und sieht vorher, wen sie erreicht.
+Keine Eigenschaft einer Sache, sondern Folge davon, wo sie liegt. Drei Wege: in einem Kreis; gespiegelt, also zusätzlich lesbar in einem weiteren Kreis oder bei einem einzelnen Menschen, geändert nur am Ursprung; veröffentlicht, lesbar ohne Identität und Zugehörigkeit. Wer eine Sache teilt, soll vorher sehen, wen sie erreicht.
 
-Not a property of a thing but a consequence of where it lies. Three reaches: within one circle, within several circles, published. Whoever puts a thing into circles decides which ones, and sees beforehand whom it reaches.
+Not a property of a thing but a consequence of where it lies. Three ways: within one circle; mirrored, that is additionally readable in a further circle or by a single person, changed only at its origin; published, readable without identity or membership. Whoever shares a thing should see beforehand whom it reaches.
 
 Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#616-wie-etwas-sichtbar-wird)
 
@@ -109,9 +109,9 @@ Quelle: [real-life-network-protocol.md#616-wie-etwas-sichtbar-wird](https://gith
 ## Verifikation
 *Verification*
 
-Der einmalige Akt, in dem zwei Menschen bestätigen, dass sie einander als diese Person erlebt haben, meist bei der ersten Begegnung; danach begegnet man sich einfach. Bedeutet nicht allgemeine Vertrauenswürdigkeit.
+Die Bestätigung zweier Menschen, dass sie einander als diese Person erlebt haben, bei einer Begegnung und optional digital verifiziert. Bedeutet nicht allgemeine Vertrauenswürdigkeit, sondern nur, dass eine Begegnung oder Identitätsbeziehung bestätigt wurde.
 
-The one-time act in which two people confirm that they have met each other as this person, usually at the first encounter; after that, they simply meet. Does not mean general trustworthiness.
+Two people's confirmation that they have met each other as this person, at an encounter and optionally verified digitally. Does not mean general trustworthiness, only that an encounter or identity relationship has been confirmed.
 
 Quelle: [real-life-network-protocol.md#83-menschen-verifizieren](https://github.com/real-life-org/real-life-network-protocol/blob/main/real-life-network-protocol.md#83-menschen-verifizieren)
 

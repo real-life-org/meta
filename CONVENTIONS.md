@@ -85,10 +85,29 @@ request. Code does not introduce rules quietly.
 
 ## Numbering and naming
 
-Documents in a normative set are numbered with a two-digit prefix
-(`00-architecture.md`, `01-app-composition.md`). **The number is a stable name,
-not a version.** A document keeps its number for life; a withdrawn one leaves
-its number unused rather than passing it on.
+Documents in a normative set carry a numeric prefix. **The number is a stable
+name, not a version.** A document keeps its number for life; a withdrawn one
+leaves its number unused rather than passing it on.
+
+**The width of the prefix belongs to the set, not to the family.** A set picks
+one width and keeps it. Two live examples, both correct:
+
+- `real-life-stack/docs/spec/` — two digits, one flat set: `00-architecture.md`,
+  `01-app-composition.md`.
+- `wot-spec/` — three digits inside a numbered area:
+  `01-wot-identity/002-signaturen-und-verifikation.md`. The area carries the
+  coarse number, the document the fine one.
+
+**Existing numbering stays as it is.** Since a number is a name, renumbering an
+existing set to match some other width would break every reference to it and is
+exactly what the stability rule forbids. Width is decided once, when a set is
+created, and a new set should state its choice in the set's README.
+
+Not every normative document is part of a numbered set. `rltp-spec/spec/` names
+its documents after their subject (`identity-layer.md`, `encounter-layer.md`)
+because they are layers of one protocol rather than a sequence to read in
+order. That is a deliberate choice too, and it is allowed; what is not allowed
+is numbering some documents of a set and not others.
 
 ## Versioning
 

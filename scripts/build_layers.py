@@ -24,7 +24,8 @@ def resolve(lang):
 COL = {"#3f7a4e": "--rlnp", "#e6f0e7": "--rlnp-tint", "#2f62c9": "--rltp", "#e5ecfa": "--rltp-tint", "#b36b1c": "--rls",
        "#f7ecdd": "--rls-tint", "#ffffff": "--bg", "#5f6b64": "--muted", "#1e2622": "--ink"}
 THEME = """<style>
-    :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
+    :root { color-scheme: light dark; }
+    :root { color-scheme: light dark; --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
     @media (prefers-color-scheme: dark) {
       :root { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
     }
@@ -32,7 +33,8 @@ THEME = """<style>
   """
 def themed(svg):
     for h, v in COL.items(): svg = svg.replace(h, f"var({v})")
-    return svg.replace('<rect width="940" height="450" fill="var(--bg)"/>', THEME + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
+    # no background rectangle: the picture is transparent, the browser paints the canvas in its scheme
+    return svg.replace('<rect width="940" height="450" fill="var(--bg)"/>', THEME, 1)
 
 for lang in ("en", "de"):
     (ROOT / f"overview/layers.{lang}.svg").write_text(themed(resolve(lang)))
@@ -49,7 +51,7 @@ def adaptive():
     a = re.sub(r"<switch>(.*?)</switch>", sw, src, flags=re.S)
     for h, v in COL.items(): a = a.replace(h, f"var({v})")
     style = """<style>
-    :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
+    :root { color-scheme: light dark; --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
     @media (prefers-color-scheme: dark) {
       :root { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
     }
@@ -66,7 +68,7 @@ def adaptive():
     })();
   ]]></script>
   """
-    a = a.replace('<rect width="940" height="450" fill="var(--bg)"/>', style + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
+    a = a.replace('<rect width="940" height="450" fill="var(--bg)"/>', style, 1)
     a = re.sub(r"<!-- The layer picture of Real Life\..*?-->", "<!-- Built by scripts/build_layers.py from layers.svg. Do not edit. Follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script); embedded via <img> it shows English. -->", a, flags=re.S)
     (ROOT / "overview/layers.adaptive.svg").write_text(a)
 

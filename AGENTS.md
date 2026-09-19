@@ -33,6 +33,15 @@ python3 scripts/build_layers.py  # builds layers.en.svg, layers.de.svg and layer
 
 Run all three before opening a pull request. `views/` and `overview/layers.{en,de,adaptive}.svg` are generated; never edit them by hand. Edit the bilingual source `overview/layers.svg` instead.
 
+## Writing a specification
+
+The family's specification conventions live in [`CONVENTIONS.md`](CONVENTIONS.md):
+two document classes (German internal specs, English outward-facing drafts), the
+German RFC 2119 keywords, the status vocabulary, versioning, and the standards we
+build on. It holds for every repository; a repository's own `CONTRIBUTING.md`
+points here and adds only what is its own. Read it before writing a normative
+sentence anywhere in the family.
+
 ## Language
 
 Repository language is English. Two exceptions: `overview/cells.md` and `overview/seams.md` are bilingual because they appear on reallife.network in German; in `coordination/` everyone writes in their own language.

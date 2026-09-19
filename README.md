@@ -35,6 +35,7 @@ Each door shows the same picture from its own side.
 | `scripts/` | `fetch_worlds.py` checks the pinned concept schemes out under `worlds/` (not committed); `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |
 | `roadmap/` | one roadmap per door and the shared rules |
+| [`CONVENTIONS.md`](CONVENTIONS.md) | how every repository of the family writes its specifications: the two document classes, the German RFC 2119 keywords, status vocabulary, versioning, the standards we build on |
 | `coordination/` | who works on what, and a daily log; the one place where everyone writes in their own language |
 
 ## Guard in a repository's CI

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds from the bilingual source overview/layers.svg:
-- layers.en.svg and layers.de.svg: fixed language, follow the colour scheme via CSS (works inside <img>);
+- layers.en.svg and layers.de.svg: fixed language; follow the system colour scheme via CSS (also inside <img>) and, opened as a document from the site, the scheme the visitor chose there;
 - layers.adaptive.svg: follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script).
 SVG <switch systemLanguage> picks the first child whose language appears anywhere in the viewer's
 preference list, not the best match, so sites embed the resolved file for their page language."""
@@ -26,9 +26,15 @@ COL = {"#3f7a4e": "--rlnp", "#e6f0e7": "--rlnp-tint", "#2f62c9": "--rltp", "#e5e
 THEME = """<style>
     :root { --bg:#ffffff; --ink:#1e2622; --muted:#5f6b64; --rlnp:#3f7a4e; --rlnp-tint:#e6f0e7; --rltp:#2f62c9; --rltp-tint:#e5ecfa; --rls:#b36b1c; --rls-tint:#f7ecdd; }
     @media (prefers-color-scheme: dark) {
-      :root { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
+      :root:not([data-theme="light"]) { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
     }
+    :root[data-theme="dark"] { --bg:#141917; --ink:#e9eee9; --muted:#98a59d; --rlnp:#7cc48a; --rlnp-tint:#1e2f23; --rltp:#7fa6f0; --rltp-tint:#1d2738; --rls:#e0a25a; --rls-tint:#33281a; }
   </style>
+  <script><![CDATA[
+    // Opened as a document from real-life.org, the picture shares the site's origin and reads the
+    // colour-scheme choice the site stored; inside <img> no script runs and the system scheme applies.
+    (function () { try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  ]]></script>
   """
 def themed(svg):
     for h, v in COL.items(): svg = svg.replace(h, f"var({v})")

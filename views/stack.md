@@ -99,9 +99,9 @@ Quelle: [04-items-relations-groups-spaces.md](https://github.com/real-life-org/r
 ## Spiegel
 *Mirror*
 
-Die Konstruktion des RLTP-Connectors für ein Item in mehreren Spaces: eine Kopie im zweiten Space, weil verschlüsselte Gruppen einander nicht lesen können; Herkunft, Aktualität und erlaubte Aktionen werden getrennt betrachtet. Eine zentrale Datenbank braucht keine Spiegel.
+Ein schreibgeschützter Schnappschuss eines Items in einem anderen Space als seinem Home. Er erscheint dort als gewöhnliches Item mit der Relation mirrorOf auf das Original; bearbeitet wird immer das Home. Dieselbe Form gilt für alle Connectoren: mit Signaturidentität (RLTP) sind die Schnappschüsse vom Autor signiert und werden vor der Anzeige geprüft, ohne Signaturidentität kommen sie ohne JWS aus einer Vertrauensdomäne.
 
-The RLTP connector's construction of an item in several spaces: a copy in the second space, because encrypted groups cannot read each other; origin, freshness and permitted actions are considered separately. A central database needs no mirrors.
+A read-only snapshot of an item in a space other than its home. There it appears as an ordinary item with the relation mirrorOf pointing at the original; editing always opens the home. The same form holds for every connector: with a signing identity (RLTP) the snapshots are author-signed and verified before they are shown, without one they come without a JWS from a single trust domain.
 
 Quelle: [09-mirror-bridge.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/09-mirror-bridge.md)
 

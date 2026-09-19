@@ -39,7 +39,7 @@ Each door shows the same picture from its own side.
 
 ## Guard in a repository's CI
 
-Each world's concept scheme lives in that world's repository (path in `terms/sources.json`); the mappings live here. A change to a scheme file must therefore be checked against the register before it is merged, from within the repository that changes it. The step checks out this repository next to the working copy and runs the guard with the working copy's file in place of the pinned source:
+Each world's concept scheme lives in that world's repository (path in `terms/sources.json`); the mappings live here. A change to a scheme file must therefore be checked against the register before it is merged, from within the repository that changes it. The step checks out this repository next to the working copy, fetches the worlds this repository pins, and runs the guard with the working copy's file in place of the pinned source:
 
 ```yaml
 - uses: actions/checkout@v4
@@ -50,6 +50,8 @@ Each world's concept scheme lives in that world's repository (path in `terms/sou
 - uses: actions/setup-python@v5
   with:
     python-version: "3.12"
+- name: fetch the concept schemes meta pins
+  run: python3 meta-src/scripts/fetch_worlds.py
 - name: concept scheme matches the shared register
   run: python3 meta-src/scripts/guard.py --scheme rlnp=terms/rlnp.skos.jsonld
 ```

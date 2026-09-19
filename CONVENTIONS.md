@@ -48,6 +48,12 @@ lowercase they are ordinary words and mean nothing normative.
 | `DARF` | `DÜRFEN` | Genuinely optional. An implementation that does it and one that does not are both conformant, and each must tolerate the other. | MAY |
 | `KANN` | `KÖNNEN` | Same as `DARF`. Use `DARF` for permission and `KANN` only where ability is meant. | MAY |
 
+BCP 14 also has `REQUIRED`, `OPTIONAL` and `RECOMMENDED`. They are synonyms of
+`MUST`, `MAY` and `SHOULD`, and the German set has no separate words for them:
+write `MUSS`, `DARF` and `SOLLTE`. Where a sentence reads better with the
+adjective, write it lowercase — `ist optional` says nothing normative on its
+own, so the sentence must say the rule elsewhere.
+
 Three rules that are easy to get wrong:
 
 1. **`SOLL` is not a keyword.** German `soll` and `sollte` are not the same

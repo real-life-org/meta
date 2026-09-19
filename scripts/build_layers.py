@@ -33,8 +33,9 @@ THEME = """<style>
   """
 def themed(svg):
     for h, v in COL.items(): svg = svg.replace(h, f"var({v})")
-    # no background rectangle: the picture is transparent, the browser paints the canvas in its scheme
-    return svg.replace('<rect width="940" height="450" fill="var(--bg)"/>', THEME, 1)
+    # the background rectangle stays and follows the scheme via var(--bg); color-scheme tells a browser
+    # that opens the file directly to paint its own canvas in the same scheme
+    return svg.replace('<rect width="940" height="450" fill="var(--bg)"/>', THEME + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
 
 for lang in ("en", "de"):
     (ROOT / f"overview/layers.{lang}.svg").write_text(themed(resolve(lang)))
@@ -68,7 +69,7 @@ def adaptive():
     })();
   ]]></script>
   """
-    a = a.replace('<rect width="940" height="450" fill="var(--bg)"/>', style, 1)
+    a = a.replace('<rect width="940" height="450" fill="var(--bg)"/>', style + '<rect width="940" height="450" fill="var(--bg)"/>', 1)
     a = re.sub(r"<!-- The layer picture of Real Life\..*?-->", "<!-- Built by scripts/build_layers.py from layers.svg. Do not edit. Follows the browser colour scheme (CSS) and, when opened as a document, the preferred browser language (script); embedded via <img> it shows English. -->", a, flags=re.S)
     (ROOT / "overview/layers.adaptive.svg").write_text(a)
 

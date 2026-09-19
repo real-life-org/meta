@@ -39,7 +39,15 @@
           "de": "Kreislaufwirtschaft",
           "en": "Circular economy"
         }
-      ]
+      ],
+      "spec": {
+        "world": "rlnp",
+        "abbr": "RLNP",
+        "name": {
+          "de": "Real Life Network Protocol, die soziale Spezifikation",
+          "en": "Real Life Network Protocol, the social specification"
+        }
+      }
     },
     {
       "id": "stack",
@@ -65,7 +73,15 @@
           "de": "Architektur und Bauplan",
           "en": "Architecture and blueprint"
         }
-      ]
+      ],
+      "spec": {
+        "world": "rls",
+        "abbr": "RLS",
+        "name": {
+          "de": "Real Life Stack, der App-Baukasten",
+          "en": "Real Life Stack, the app toolkit"
+        }
+      }
     },
     {
       "id": "trust",
@@ -95,7 +111,15 @@
           "de": "Gemeinschaft",
           "en": "Community"
         }
-      ]
+      ],
+      "spec": {
+        "world": "rltp",
+        "abbr": "RLTP",
+        "name": {
+          "de": "Real Life Trust Protocol, die technische Spezifikation",
+          "en": "Real Life Trust Protocol, the technical specification"
+        }
+      }
     }
   ]
 }

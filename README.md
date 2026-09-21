@@ -32,7 +32,7 @@ Each door shows the same picture from its own side.
 |---|---|
 | `overview/` | the layer picture and `parts.json` (the three parts in one sentence and three points each, source of the gate page at real-life.org). `layers.svg` is the bilingual source; `scripts/build_layers.py` builds `layers.en.svg` and `layers.de.svg` (fixed language, for pages) and `layers.adaptive.svg` (follows the browser's colour scheme, and its preferred language when opened directly; embedded as an image it shows English). The cells; the seams |
 | `terms/` | the federated term register: shared context, mappings between the three concept schemes, and `sources.json`, which pins each world's concept scheme to a commit in its own repository; `scripts/fetch_worlds.py` checks the pinned files out under `worlds/` (not committed) |
-| `scripts/` | `fetch_worlds.py` checks the pinned concept schemes out under `worlds/` (not committed); `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
+| `scripts/` | `fetch_worlds.py` checks the pinned concept schemes out under `worlds/` (not committed); `check_pins.py` asks whether a world has changed its scheme since it was pinned (`test_check_pins.py` tests it); `guard.py` checks the register (runs in every repo's CI); `render.py` produces one view per door |
 | `views/` | generated views of the register, one per door; consumed by the sites at build time |
 | `roadmap/` | one roadmap per door and the shared rules |
 | [`CONVENTIONS.md`](CONVENTIONS.md) | how every repository of the family writes its specifications: the two document classes, the German RFC 2119 keywords, status vocabulary, versioning, the standards we build on |
@@ -58,6 +58,14 @@ Each world's concept scheme lives in that world's repository (path in `terms/sou
 ```
 
 `--scheme WORLD=PATH` can be given more than once. The guard fails on a missing language, a missing source, a dangling mapping, and the same word in two worlds without a mapping; it lists open proposals and convergence tasks. The path per world: `rlnp=terms/rlnp.skos.jsonld`, `rltp=terms/rltp.skos.jsonld`, `rls=docs/reference/rls.skos.jsonld`.
+
+## When a world moves
+
+`terms/sources.json` pins each world's concept scheme to a commit, so the register describes a state someone checked. The pin does not follow the world. `scripts/check_pins.py` compares each pinned file with the head of that repository's default branch and says *current*, *behind* (a newer head, same file) or *drifted* (the file differs). `.github/workflows/pins.yml` runs it daily: while a world is drifted it keeps one issue open, and it closes that issue once every pin matches again.
+
+A world that cannot be reached is a failed check, never a drift finding — nothing was compared, so nothing is known. The workflow then fails visibly and leaves an open drift issue alone. `scripts/test_check_pins.py` holds that apart against throwaway repositories on disk, including the case where one world drifts while another cannot be reached.
+
+Following a world is a decision, not a refresh: set its `ref`, then run `fetch_worlds.py`, `guard.py` and `render.py`. If the guard rejects the new scheme, the mappings come first and the pin stays where it is.
 
 ## The ground rule
 

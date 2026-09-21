@@ -5,10 +5,21 @@ name: pins
 # and nothing here notices — the register, the views and the pages at real-life.org keep showing
 # the old state, with no local change and nothing red.
 #
-# This job asks the three repositories once a day whether their scheme file has moved on, and
-# reports through one issue: opened when a world drifts, updated while it stays drifted, closed
-# once every pin matches again. It never changes a pin — which commit the register describes is
-# a decision, and the new scheme may need mappings that do not exist yet.
+# This job asks the three repositories once a day whether their scheme file has moved on. Three
+# answers, three different things to do:
+#
+#   nothing drifted   close the drift issue if one is open.
+#
+#   drift proven      open the issue, or comment on the open one. The job stays green: drift is
+#                     a finding about the world, not a broken job, and the issue carries it.
+#
+#   check failed      a repository could not be reached, a file could not be read, or the script
+#                     itself broke. Nothing was compared, so nothing is known: never report this
+#                     as drift, never close an open drift issue on it, and fail loudly — a check
+#                     that cannot run is worth less than no check if it looks like a green one.
+#
+# It never changes a pin. Which commit the register describes is a decision, and a new scheme may
+# need mappings that do not exist yet.
 
 on:
   schedule:
@@ -31,6 +42,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: The checker tells drift, silence and a failed check apart
+        run: python3 scripts/test_check_pins.py
+
       - name: Do the pinned concept schemes still match their repositories?
         id: check
         run: |
@@ -38,9 +52,18 @@ jobs:
           python3 scripts/check_pins.py --verbose | tee report.txt
           STATUS=${PIPESTATUS[0]}
           set -e
-          [ "$STATUS" -eq 0 ] && DRIFTED=no || DRIFTED=yes
-          echo "drifted=$DRIFTED" >> "$GITHUB_OUTPUT"
           { echo '```'; cat report.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          # 0 nothing drifted · 2 drift · 3 check failed · 4 both. Anything else is a crash.
+          case "$STATUS" in
+            0) DRIFTED=no;  FAILED=no ;;
+            2) DRIFTED=yes; FAILED=no ;;
+            3) DRIFTED=no;  FAILED=yes ;;
+            4) DRIFTED=yes; FAILED=yes ;;
+            *) echo "check_pins.py exited with $STATUS, which it never returns on purpose" >&2
+               DRIFTED=no; FAILED=yes ;;
+          esac
+          echo "drifted=$DRIFTED" >> "$GITHUB_OUTPUT"
+          echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
 
       - name: Report through the issue
         run: |
@@ -57,6 +80,11 @@ jobs:
               echo "then run \`scripts/fetch_worlds.py\`, \`scripts/guard.py\` and \`scripts/render.py\`."
               echo "The guard decides whether the new scheme still fits the mappings; if it does not,"
               echo "the mappings come first and the pin stays where it is."
+              if [ "${{ steps.check.outputs.failed }}" = "yes" ]; then
+                echo
+                echo "**Some worlds could not be checked in this run** (see the report above);"
+                echo "for those, nothing is known either way."
+              fi
               echo
               echo "_Checked by \`.github/workflows/pins.yml\` on $(date -u '+%Y-%m-%d %H:%M UTC')._"
             } > body.md
@@ -65,6 +93,14 @@ jobs:
             else
               gh issue create --title "$TITLE" --body-file body.md
             fi
+          elif [ "${{ steps.check.outputs.failed }}" = "yes" ]; then
+            echo "The check did not complete; leaving issue ${NUMBER:-(none open)} as it is."
           elif [ -n "$NUMBER" ]; then
             gh issue close "$NUMBER" --comment "Every pinned concept scheme matches its repository again."
           fi
+
+      - name: A check that could not run must not look green
+        if: steps.check.outputs.failed == 'yes'
+        run: |
+          echo "At least one world could not be checked; see the report in the job summary." >&2
+          exit 1

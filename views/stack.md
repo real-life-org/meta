@@ -36,7 +36,7 @@ Vorgeschlagen: wer zu einem Space gehört. Die Anwendungsschicht liest Mitglieds
 
 Proposed: who belongs to a space. The application layer reads membership through the connector and does not construct it; how it is stored and proven is decided by the connector in use (the local connector keeps it in groupMembers, the RLTP connector derives it from the group log and key).
 
-Code: `_members`, `groupMembers`
+Code: `groupMembers`
 
 Quelle: [04-items-relations-groups-spaces.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/04-items-relations-groups-spaces.md)
 

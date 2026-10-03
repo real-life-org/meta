@@ -16,7 +16,7 @@ language and in form, not in rigour.
 
 | | Internal specification | Outward-facing draft |
 |---|---|---|
-| Where | `real-life-stack/docs/spec/`, `real-life-network-protocol/`, `wot-spec/01-`…`03-` | `wot-spec/rltp/` |
+| Where | `real-life-stack/docs/spec/`, `real-life-network-protocol/`, `wot-spec/01-`…`03-` | `trust-protocol/spec/` |
 | Language | German | English |
 | Keywords | German RFC 2119 (below) | BCP 14 (`MUST`, `SHOULD`, `MAY`) with the standard boilerplate |
 | Form | numbered documents, status line per document | IETF-style editor's draft: editors, version, date, conformance profile, references |

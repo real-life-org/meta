@@ -21,10 +21,27 @@ Every green edge in the picture is a **seam**: a word from RLNP with a counterpa
 | Site | For whom | What it does |
 |---|---|---|
 | [reallife.network](https://reallife.network) | everyone who wants to connect | invites you into relationship, in RLNP's language |
-| trust-protocol.real-life.org (today [rltp.real-life.org](https://rltp.real-life.org)) | protocol developers, DTGWG, security people | specification, simulators, conformance |
+| [trust-protocol.real-life.org](https://trust-protocol.real-life.org) | protocol developers, DTGWG, security people | specification, simulators, conformance |
 | [real-life-stack.de](https://real-life-stack.de) | developers, vibecoders, agents | handbook, term atlas, how to build and contribute |
 
 Each door shows the same picture from its own side.
+
+## Repositories
+
+| Part | Repository |
+|---|---|
+| RLNP | [`real-life-org/real-life-network-protocol`](https://github.com/real-life-org/real-life-network-protocol) |
+| RLS | [`real-life-org/real-life-stack`](https://github.com/real-life-org/real-life-stack) |
+| RLTP | [`real-life-org/trust-protocol`](https://github.com/real-life-org/trust-protocol) (formerly `rltp-spec`) |
+
+## Generations of the trust protocol
+
+| Generation | Specification | Library | Implementation | Status |
+|---|---|---|---|---|
+| 3: RLTP | [`trust-protocol`](https://github.com/real-life-org/trust-protocol) | [`@real-life/trust-protocol`](https://www.npmjs.com/package/@real-life/trust-protocol) | the simulators and a new Web of Trust app, in [`trust-protocol`](https://github.com/real-life-org/trust-protocol) | specifications converged; the first app is being built |
+| 2 | [`wot-spec`](https://github.com/real-life-org/wot-spec) | [`@web_of_trust/core`](https://www.npmjs.com/package/@web_of_trust/core) | the Web of Trust app at [web-of-trust.de](https://web-of-trust.de), in [`web-of-trust`](https://github.com/real-life-org/web-of-trust) | in production in the Web of Trust app and the Real Life Stack; repaired toward generation 3; users move once their identities are migrated, planned as the last step |
+
+**Web of Trust** is the name of the app; **RLTP** is the name of the protocol. In the vocabulary of the ToIP Decentralized Trust Graph work, the app is a *PNM* (Personal Network Manager), the person's own app. It is local-first: the keys stay on the device, no hosted agent (*VTA*, Verifiable Trust Agent) is required, and it interoperates through Trust Tasks.
 
 ## What lives here
 

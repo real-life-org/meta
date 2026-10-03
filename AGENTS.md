@@ -7,7 +7,7 @@ This repository connects three worlds; it owns none of them. Read this before ch
 | You want to change… | Do it in… |
 |---|---|
 | the meaning of a term (RLNP: circle, role, witnessing) | `real-life-org/real-life-network-protocol` |
-| the construction of a term (RLTP: group, anchor, edge, epoch) | `real-life-org/rltp-spec` |
+| the construction of a term (RLTP: group, anchor, edge, epoch) | `real-life-org/trust-protocol` |
 | a UI or code term of the stack (space, item, connector, mirror) | `real-life-org/real-life-stack` |
 | how two terms relate across worlds | `terms/mappings.skos.jsonld` here |
 | the layer picture or the seams | `overview/` here |

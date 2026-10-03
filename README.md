@@ -21,7 +21,7 @@ Every green edge in the picture is a **seam**: a word from RLNP with a counterpa
 | Site | For whom | What it does |
 |---|---|---|
 | [reallife.network](https://reallife.network) | everyone who wants to connect | invites you into relationship, in RLNP's language |
-| trust-protocol.real-life.org (today [rltp.real-life.org](https://rltp.real-life.org)) | protocol developers, DTGWG, security people | specification, simulators, conformance |
+| [trust-protocol.real-life.org](https://trust-protocol.real-life.org) | protocol developers, DTGWG, security people | specification, simulators, conformance |
 | [real-life-stack.de](https://real-life-stack.de) | developers, vibecoders, agents | handbook, term atlas, how to build and contribute |
 
 Each door shows the same picture from its own side.

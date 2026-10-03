@@ -10,7 +10,7 @@ A person's identifier toward one context (did:key). Every enactment of a ceremon
 
 Kennung einer Person gegenüber einem Kontext (did:key). Jede Durchführung einer Zeremonie läuft unter einem frisch abgeleiteten Paaranker, auch eine Wiederbegegnung; ein stehender Anker erscheint nie auf dem Zeremoniedraht, und Anker laufen nie zu einer Person zusammen.
 
-Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative), [identity-layer.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/identity-layer.md)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative), [identity-layer.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/identity-layer.md)
 
 - related: **[Person](network.md#mensch) `rlnp:Mensch`** (Network)
 
@@ -19,9 +19,9 @@ Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec
 `rltp:Attestation`
 **Proposal, not yet in the spec**
 
-Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: DTG Endorsement Credential (VEC), i.e. a Statement Credential with predicate endorses/1.
+Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: the DTG Verifiable Endorsement Credential (VEC), i.e. a Statement Credential with predicate endorses/1.
 
-Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential (VEC), also ein Statement Credential mit dem Prädikat endorses/1.
+Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: Verifiable Endorsement Credential (VEC) der DTG, also ein Statement Credential mit dem Prädikat endorses/1.
 
 Source: [profile.md](https://github.com/trustoverip/dtgwg-vsc-registry/blob/f828afd/predicates/endorses/1/profile.md)
 
@@ -37,7 +37,7 @@ The relation between two anchors constituted by the encounter credentials betwee
 
 Die Relation zwischen zwei Ankern, gebildet aus den Begegnungs-Credentials zwischen ihnen; eingehend, ausgehend oder beidseitig. Eine Kante je Ankerpaar.
 
-Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
 
 - narrower than: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
 
@@ -49,7 +49,7 @@ One performed run of a ceremony between two people. Never reused; complete when 
 
 Ein durchgeführter Lauf einer Zeremonie zwischen zwei Menschen. Nie wiederverwendet; vollständig, wenn beide Seiten ihre Aufzeichnung halten.
 
-Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms)
 
 - same: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 - same: **[Verification](stack.md#verifikation) `rls:verification`** (Stack)
@@ -62,7 +62,7 @@ The immutable credential in which one party records that they recognized another
 
 Unveränderliches Credential, in dem eine Partei festhält, dass sie eine andere erkannt hat. Ausgestellt von einer Partei über die andere, offline prüfbar.
 
-Source: [encounter-layer.md#7-the-encounter-credential](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#7-the-encounter-credential)
+Source: [encounter-layer.md#7-the-encounter-credential](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#7-the-encounter-credential)
 
 - related: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 - related: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
@@ -75,7 +75,7 @@ A collective actor with members, a policy, an authority log, and documents. Its 
 
 Kollektiver Akteur mit Mitgliedern, Policy, Autoritäts-Log und Dokumenten. Identität ist der Digest der Genesis-Operation, Adresse die Gruppen-DID.
 
-Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#2-conventions-and-terminology)
+Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#2-conventions-and-terminology)
 
 - same: **[Circle](network.md#kreis) `rlnp:Kreis`** (Network)
 - same: **[Space](stack.md#space) `rls:space`** (Stack)
@@ -88,7 +88,7 @@ A fact in the authority log plus key possession, not a certificate. Entered only
 
 Zustand im Autoritäts-Log plus Schlüsselbesitz, kein Zertifikat. Eintritt nur durch explizite, kryptografisch gebundene Zustimmung.
 
-Source: [access-layer.md#5-members](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/membership-tasks.md)
+Source: [access-layer.md#5-members](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/membership-tasks.md)
 
 - same: **[Member](stack.md#mitglied) `rls:member`** (Stack)
 
@@ -102,6 +102,6 @@ The mode in which a group is readable from outside; publication runs through the
 
 Der Modus, in dem eine Gruppe nach außen lesbar ist; Veröffentlichung läuft über den Publikations-Port (offene Sichtbarkeit: weltlesbar).
 
-Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/network-visibility.md)
+Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md)
 
 - related: **[Visibility](network.md#sichtbarkeit) `rlnp:Sichtbarkeit`** (Network)

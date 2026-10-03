@@ -26,6 +26,18 @@ Every green edge in the picture is a **seam**: a word from RLNP with a counterpa
 
 Each door shows the same picture from its own side.
 
+## Repositories and generations
+
+| Repository | What it holds |
+|---|---|
+| [`real-life-org/trust-protocol`](https://github.com/real-life-org/trust-protocol) | RLTP, generation 3 of the trust protocol: specifications, schemas, vectors, conformance, the library [`@real-life/trust-protocol`](https://www.npmjs.com/package/@real-life/trust-protocol), the simulators, and the generation-3 Web of Trust app. Formerly `rltp-spec`. |
+| [`real-life-org/wot-spec`](https://github.com/real-life-org/wot-spec) | generation 2, in production in the Web of Trust app and the Real Life Stack. Maintained while deployed apps run on it; its fixes move toward generation 3. |
+| [`real-life-org/web-of-trust`](https://github.com/real-life-org/web-of-trust) | the generation-2 implementation (`@web_of_trust/*`) and the app at [web-of-trust.de](https://web-of-trust.de) |
+| [`real-life-org/real-life-network-protocol`](https://github.com/real-life-org/real-life-network-protocol) | RLNP |
+| [`real-life-org/real-life-stack`](https://github.com/real-life-org/real-life-stack) | RLS |
+
+**Web of Trust** is the name of the app; **RLTP** is the name of the protocol. In the vocabulary of the ToIP Decentralized Trust Graph work, the app is a *PNM* (Personal Network Manager), the person's own app. It is local-first: the keys stay on the device, no hosted agent (*VTA*, Verifiable Trust Agent) is required, and it interoperates through Trust Tasks.
+
 ## What lives here
 
 | Path | Content |

@@ -103,7 +103,7 @@ existing set to match some other width would break every reference to it and is
 exactly what the stability rule forbids. Width is decided once, when a set is
 created, and a new set should state its choice in the set's README.
 
-Not every normative document is part of a numbered set. `rltp-spec/spec/` names
+Not every normative document is part of a numbered set. `trust-protocol/spec/` names
 its documents after their subject (`identity-layer.md`, `encounter-layer.md`)
 because they are layers of one protocol rather than a sequence to read in
 order. That is a deliberate choice too, and it is allowed; what is not allowed

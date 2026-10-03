@@ -8,9 +8,9 @@
    "branch": "main"
   },
   "rltp": {
-   "repo": "real-life-org/rltp-spec",
+   "repo": "real-life-org/trust-protocol",
    "path": "terms/rltp.skos.jsonld",
-   "ref": "03f9d3e3e6e40c7952863ef1f8b31250b331753d",
+   "ref": "c07db61da30363e19b60e0c8cbe75a109b878006",
    "branch": "main"
   },
   "rls": {

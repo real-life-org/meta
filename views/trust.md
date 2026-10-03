@@ -19,11 +19,11 @@ Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec
 `rltp:Attestation`
 **Proposal, not yet in the spec**
 
-Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: DTG Endorsement Credential.
+Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: DTG Endorsement Credential (VEC), i.e. a Statement Credential with predicate endorses/1.
 
-Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential.
+Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential (VEC), also ein Statement Credential mit dem Prädikat endorses/1.
 
-Source: [README.md](https://github.com/real-life-org/rltp-spec/blob/main/README.md)
+Source: [profile.md](https://github.com/trustoverip/dtgwg-vsc-registry/blob/f828afd/predicates/endorses/1/profile.md)
 
 - target: same as: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
 - target: same as: **[Role](network.md#rolle) `rlnp:Rolle`** (Network)

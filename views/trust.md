@@ -10,7 +10,7 @@ A person's identifier toward one context (did:key). Every enactment of a ceremon
 
 Kennung einer Person gegenüber einem Kontext (did:key). Jede Durchführung einer Zeremonie läuft unter einem frisch abgeleiteten Paaranker, auch eine Wiederbegegnung; ein stehender Anker erscheint nie auf dem Zeremoniedraht, und Anker laufen nie zu einer Person zusammen.
 
-Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative), [identity-layer.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/identity-layer.md)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative), [identity-layer.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/identity-layer.md)
 
 - related: **[Person](network.md#mensch) `rlnp:Mensch`** (Network)
 
@@ -19,15 +19,75 @@ Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec
 `rltp:Attestation`
 **Proposal, not yet in the spec**
 
-Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: DTG Endorsement Credential (VEC), i.e. a Statement Credential with predicate endorses/1.
+Proposed: a signed, portable statement by one person about another's contribution, role, skill or promise, independently verifiable. Candidate: the DTG Verifiable Endorsement Credential (VEC), i.e. a Statement Credential with predicate endorses/1.
 
-Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: DTG Endorsement Credential (VEC), also ein Statement Credential mit dem Prädikat endorses/1.
+Vorgeschlagen: signierte, portable Aussage einer Person über Beitrag, Rolle, Fähigkeit oder Versprechen einer anderen, unabhängig prüfbar. Kandidat: Verifiable Endorsement Credential (VEC) der DTG, also ein Statement Credential mit dem Prädikat endorses/1.
 
 Source: [profile.md](https://github.com/trustoverip/dtgwg-vsc-registry/blob/f828afd/predicates/endorses/1/profile.md)
 
 - target: same as: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
 - target: same as: **[Role](network.md#rolle) `rlnp:Rolle`** (Network)
 - target: same as: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
+
+## Bundle
+*Bündel*
+`rltp:Bundle`
+
+The one-scan transmission (sent card plus step credential), specified as the Delivery Contract task encounter-bundle.
+
+Die Ein-Scan-Übertragung (gesendete Karte plus Schritt-Credential), spezifiziert als Delivery-Contract-Task encounter-bundle.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [delivery-contract.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/delivery-contract.md)
+
+> Deliberately without counterpart in RLNP or the Stack: the delivery unit of the one-scan path is construction of the transport, invisible to the person.
+
+## Ceremony
+*Zeremonie*
+`rltp:Ceremony`
+
+A registered, versioned definition of an encounter interaction, including its time parameters.
+
+Registrierte, versionierte Definition einer Begegnungsinteraktion einschließlich ihrer Zeitparameter.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#51-registered-ceremonies](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#51-registered-ceremonies)
+
+> Deliberately without counterpart in RLNP or the Stack: the registered form of an enactment (how the two parties see each other's challenges) is a construction detail of the verification (mapped at rltp:Enactment).
+
+## Challenge
+*Challenge*
+`rltp:Challenge`
+
+A fresh, single-use, high-entropy value carried in a contact card for one enactment. One concept; displayed and sent cards differ only in lifecycle.
+
+Frischer, einmal verwendbarer Wert hoher Entropie, der in einer Kontaktkarte für einen Begegnungsvorgang reist. Ein Begriff; angezeigte und gesendete Karten unterscheiden sich nur im Lebenszyklus.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#53-challenges](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#53-challenges)
+
+> Deliberately without counterpart in RLNP or the Stack: the fresh value each party shows during an enactment is a construction detail of the verification (mapped at rltp:Enactment).
+
+## Contact card
+*Kontaktkarte*
+`rltp:ContactCard`
+
+A person's signed self-description carrying the material needed to recognize and reach them and, in an enactment, a fresh challenge; displayed (shown for scanning) or sent (transmitted inside an enactment, naming its recipient). Not a credential.
+
+Signierte Selbstbeschreibung einer Person mit dem Material, um sie zu erkennen und zu erreichen, und im Begegnungsvorgang mit einer frischen Challenge; angezeigt (zum Scannen) oder gesendet (im Vorgang übertragen, nennt den Empfänger). Kein Credential.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#6-the-contact-card](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#6-the-contact-card)
+
+> Deliberately without counterpart in RLNP or the Stack: the card carries what the counterpart needs to reach and recognize an anchor; the Stack shows a profile, which is the view of a person, not a delivery address.
+
+## Credential digest
+*Credential-Digest*
+`rltp:CredentialDigest`
+
+The multibase-encoded multihash over JCS of the complete credential including its proof.
+
+Der multibase-kodierte Multihash über JCS des vollständigen Credentials einschließlich seines Proofs.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms)
+
+> Deliberately without counterpart in RLNP or the Stack: the content digest of an encounter credential is construction, invisible to the person.
 
 ## Edge
 *Kante*
@@ -37,7 +97,7 @@ The relation between two anchors constituted by the encounter credentials betwee
 
 Die Relation zwischen zwei Ankern, gebildet aus den Begegnungs-Credentials zwischen ihnen; eingehend, ausgehend oder beidseitig. Eine Kante je Ankerpaar.
 
-Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
 
 - narrower than: **[Relationship](network.md#beziehung) `rlnp:Beziehung`** (Network)
 
@@ -49,10 +109,34 @@ One performed run of a ceremony between two people. Never reused; complete when 
 
 Ein durchgeführter Lauf einer Zeremonie zwischen zwei Menschen. Nie wiederverwendet; vollständig, wenn beide Seiten ihre Aufzeichnung halten.
 
-Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#22-terms)
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms)
 
 - same: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 - same: **[Verification](stack.md#verifikation) `rls:verification`** (Stack)
+
+## Enactment binding
+*Vorgangsbindung*
+`rltp:EnactmentBinding`
+
+The digest, identical in both step credentials of an enactment, that ties them to one exchange descriptor: the multihash over JCS of the ceremony and both challenges in ascending order.
+
+Der in beiden Schritt-Credentials eines Vorgangs identische Digest, der sie an einen Austauschdeskriptor bindet: Multihash über JCS von Zeremonie und beiden Challenges in aufsteigender Ordnung.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#54-the-enactment-binding](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#54-the-enactment-binding)
+
+> Deliberately without counterpart in RLNP or the Stack: the digest that ties the two challenges together is construction, invisible to the person.
+
+## Enactment record
+*Vorgangsaufzeichnung*
+`rltp:EnactmentRecord`
+
+A party's durable local record of an enactment, created before issuing; the records are also the consumed-challenge history.
+
+Die dauerhafte lokale Aufzeichnung einer Partei über einen Begegnungsvorgang, vor der Ausstellung angelegt; die Aufzeichnungen sind zugleich die Geschichte verbrauchter Challenges.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#55-the-enactment-record](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#55-the-enactment-record)
+
+> Deliberately without counterpart in RLNP or the Stack: what a party keeps after its own step is local state of the protocol, not a thing in the network.
 
 ## Encounter credential
 *Begegnungs-Credential*
@@ -62,7 +146,7 @@ The immutable credential in which one party records that they recognized another
 
 Unveränderliches Credential, in dem eine Partei festhält, dass sie eine andere erkannt hat. Ausgestellt von einer Partei über die andere, offline prüfbar.
 
-Source: [encounter-layer.md#7-the-encounter-credential](https://github.com/real-life-org/rltp-spec/blob/main/spec/encounter-layer.md#7-the-encounter-credential)
+Source: [encounter-layer.md#7-the-encounter-credential](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#7-the-encounter-credential)
 
 - related: **[Verification](network.md#verifikation) `rlnp:Verifikation`** (Network)
 - related: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
@@ -75,10 +159,22 @@ A collective actor with members, a policy, an authority log, and documents. Its 
 
 Kollektiver Akteur mit Mitgliedern, Policy, Autoritäts-Log und Dokumenten. Identität ist der Digest der Genesis-Operation, Adresse die Gruppen-DID.
 
-Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#2-conventions-and-terminology)
+Source: [access-layer.md#2-conventions-and-terminology](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#2-conventions-and-terminology)
 
 - same: **[Circle](network.md#kreis) `rlnp:Kreis`** (Network)
 - same: **[Space](stack.md#space) `rls:space`** (Stack)
+
+## Incoming edge
+*Eingehende Kante*
+`rltp:IncomingEdge`
+
+An edge, from a party's local view, when it has received the counterparty's credential and not issued its own.
+
+Eine Kante aus lokaler Sicht, wenn die Partei ein Credential der Gegenseite angenommen und selbst keines ausgestellt hat.
+
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
+
+> Deliberately without counterpart in RLNP or the Stack: a direction state of rltp:Edge (only the counterpart has confirmed). For the person it is an unfinished verification; the Stack shows it as pending, not as a relationship.
 
 ## Member
 *Mitglied*
@@ -88,11 +184,59 @@ A fact in the authority log plus key possession, not a certificate. Entered only
 
 Zustand im Autoritäts-Log plus Schlüsselbesitz, kein Zertifikat. Eintritt nur durch explizite, kryptografisch gebundene Zustimmung.
 
-Source: [access-layer.md#5-members](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/membership-tasks.md)
+Source: [access-layer.md#5-members](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#5-members), [membership-tasks.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/membership-tasks.md)
 
 - same: **[Member](stack.md#mitglied) `rls:member`** (Stack)
 
 > Deliberately without a counterpart in RLNP (2026-09-18): the network knows membership only as what it must not require. Belonging to the network lives in relationships, not in lists; a circle chooses its own form and access, and membership is one of the forms the Stack and the Trust Protocol provide for it.
+
+## Mutual edge
+*Beidseitige Kante*
+`rltp:MutualEdge`
+
+An edge, from a party's local view, when for at least one enactment it has both issued and received.
+
+Eine Kante aus lokaler Sicht, wenn die Partei für mindestens einen Vorgang sowohl ausgestellt als auch angenommen hat.
+
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
+
+> Deliberately without counterpart in RLNP or the Stack: the state of rltp:Edge in which both parties have confirmed; this is the state RLNP Beziehung maps to.
+
+## Outgoing edge
+*Ausgehende Kante*
+`rltp:OutgoingEdge`
+
+An edge, from a party's local view, when it has issued its own credential and not received the counterparty's.
+
+Eine Kante aus lokaler Sicht, wenn die Partei ihr Credential ausgestellt und keines der Gegenseite angenommen hat.
+
+Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
+
+> Deliberately without counterpart in RLNP or the Stack: a direction state of rltp:Edge (only this party has confirmed). For the person it is an unfinished verification; the Stack shows it as pending, not as a relationship.
+
+## Pair anchor
+*Paaranker*
+`rltp:PairAnchor`
+
+An anchor derived for one enactment (DTG scope pairwise). The enacting anchor of a ceremony is a fresh pair anchor at every enactment.
+
+Ein für einen Begegnungsvorgang abgeleiteter Anker (DTG-Scope pairwise). Der Anker, unter dem eine Zeremonie durchgeführt wird, ist bei jedem Vorgang ein frischer Paaranker.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#44-the-enacting-anchor-fresh-always-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#44-the-enacting-anchor-fresh-always-normative)
+
+> Deliberately without counterpart in RLNP or the Stack: the fresh anchor a person uses for one enactment is pure protocol construction; for the person it is still the one relationship (RLNP Beziehung, mapped at rltp:Edge).
+
+## Step
+*Schritt*
+`rltp:Step`
+
+One credential issuance within an enactment.
+
+Eine Credential-Ausstellung innerhalb eines Begegnungsvorgangs.
+
+Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms)
+
+> Deliberately without counterpart in RLNP or the Stack: one party's confirmation inside an enactment is a construction detail of the verification; the Stack and RLNP see the whole act.
 
 ## Visibility mode
 *Sichtbarkeitsmodus*
@@ -102,6 +246,6 @@ The mode in which a group is readable from outside; publication runs through the
 
 Der Modus, in dem eine Gruppe nach außen lesbar ist; Veröffentlichung läuft über den Publikations-Port (offene Sichtbarkeit: weltlesbar).
 
-Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/rltp-spec/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/rltp-spec/blob/main/spec/network-visibility.md)
+Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md)
 
 - related: **[Visibility](network.md#sichtbarkeit) `rlnp:Sichtbarkeit`** (Network)

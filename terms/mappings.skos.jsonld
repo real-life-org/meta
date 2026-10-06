@@ -233,6 +233,30 @@
   {
    "@id": "rltp:Adapter",
    "skos:note": "Deliberately without counterpart in RLNP or the Stack: a registered binding of a key-agreement procedure to the key port is internal protocol architecture, invisible to the person. The Stack's backend binding is the connector, which is pure Stack construction and unrelated."
+  },
+  {
+   "@id": "rltp:Invite",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: a member's signed offer of membership to one person, a protocol document that carries no keys. RLNP Begegnung is the human meeting that may precede it; the Stack shows an invitation as a pending state of a member, not as a thing of its own."
+  },
+  {
+   "@id": "rltp:Accept",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: the invitee's signed consent to exactly one invite, carrying the card the welcome is sealed to. Consent is a protocol act here; RLNP speaks of belonging, not of the document that records agreeing to it."
+  },
+  {
+   "@id": "rltp:Welcome",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: the sealed document that hands an admitted person the key material of one key state, committed by digest from the admitting operation. Key transport is protocol construction; the Stack sees only that a member can read."
+  },
+  {
+   "@id": "rltp:WelcomeSeal",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: the encryption a welcome travels in, the Delivery Contract's seal construction under its own domain string, addressed to the key of the accept's card. A narrower aspect of rltp:Welcome."
+  },
+  {
+   "@id": "rltp:Bootstrap",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: an admitted person's or a bound device's first entry into a group, adopted provisionally and confirmed at the log. The Stack shows the person a waiting state; RLNP has no notion of a provisional member."
+  },
+  {
+   "@id": "rltp:AdmissionEvidence",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: the complete invite and accept, optionally with vouches, relayed to a member who may admit, so that any such member can complete the admission. It grants nothing; RLNP's Bezeugen is the human act of vouching, which rltp:Attestation covers."
   }
  ]
 }

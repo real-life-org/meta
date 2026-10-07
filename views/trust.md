@@ -165,13 +165,13 @@ Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-pro
 *Gemeinschaftsanker*
 `rltp:CommunityAnchor`
 
-The anchor of a person's personal community, an ordinary member anchor of Identity §6, serving as the person's chosen cross-relationship coordinate; it appears in no artifact of the Access Layer except inside member-mapping@1.
+The anchor of a person's personal community at its current generation (Identity §5.4), serving as the person's chosen cross-relationship coordinate; it is a member of no group and appears in no artifact of the Access Layer except inside anchor.rotate. The crossing from a member anchor to a contact is the group pair of the Network Visibility layer.
 
-Der Anker der persönlichen Gemeinschaft einer Person, ein gewöhnlicher Mitgliedsanker nach Identity §6, der als selbstgewählte beziehungsübergreifende Koordinate der Person dient; er erscheint in keinem Artefakt der Zugangsschicht außer innerhalb von member-mapping@1.
+Der Anker der persönlichen Gemeinschaft einer Person in ihrer aktuellen Generation (Identity §5.4), der als selbstgewählte beziehungsübergreifende Koordinate der Person dient; er ist Mitglied keiner Gruppe und erscheint in keinem Artefakt der Zugangsschicht außer innerhalb von anchor.rotate. Den Übergang von einem Mitgliedsanker zu einem Kontakt leistet das Gruppenpaar der Sichtbarkeitsschicht.
 
-Source: [access-layer.md#55-member-mapping1--the-deliberate-crossing-of-the-group-boundary](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#55-member-mapping1--the-deliberate-crossing-of-the-group-boundary), [identity-layer.md#6-context-labels-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/identity-layer.md#6-context-labels-normative)
+Source: [access-layer.md#56-anchorrotate--the-lineage-entry](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#56-anchorrotate--the-lineage-entry), [network-visibility.md#52b-group-star1--the-senders-groups-blinded-to-every-contact-sealed-to-the-chosen-ones](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#52b-group-star1--the-senders-groups-blinded-to-every-contact-sealed-to-the-chosen-ones), [identity-layer.md#54-the-community-anchors-generations](https://github.com/real-life-org/trust-protocol/blob/main/spec/identity-layer.md#54-the-community-anchors-generations)
 
-> Deliberately without counterpart in RLNP or the Stack: an ordinary member anchor that a person uses as a chosen cross-relationship coordinate is protocol construction, like every anchor (RLNP Mensch, related at rltp:Anchor). The Stack shows a profile, which is the view of a person, not an anchor.
+> Deliberately without counterpart in RLNP or the Stack: the anchor a person uses as a chosen cross-relationship coordinate is protocol construction, like every anchor (RLNP Mensch, related at rltp:Anchor). The Stack shows a profile, which is the view of a person, not an anchor.
 
 ## Contact card
 *Kontaktkarte*

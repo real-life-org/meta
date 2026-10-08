@@ -1,0 +1,56 @@
+---
+/**
+ * The glossary page body: every concept of the site's world, sorted by its
+ * label in the page language, anchored by local name (`#Member`, `#space`).
+ * Data comes from the `realLifeTheme` plugin (register + cross-world view).
+ */
+import { Badge } from '@astrojs/starlight/components'
+import data from 'virtual:real-life-theme/glossary'
+import { crossLinks } from './mappings.js'
+
+interface Props {
+  /** 'de' or 'en'; default: the page language (de stays de, everything else is en). */
+  lang?: string
+}
+
+const raw = Astro.props.lang ?? Astro.locals.starlightRoute?.lang ?? Astro.currentLocale ?? 'en'
+const lang: 'de' | 'en' = /^de(-|$)/i.test(raw) ? 'de' : 'en'
+const T = {
+  de: { also: 'Auch', broader: 'Oberbegriff', related: 'Siehe auch', source: 'Quelle', code: 'Code', proposed: 'Vorschlag' },
+  en: { also: 'Also', broader: 'Broader', related: 'See also', source: 'Source', code: 'Code', proposed: 'proposed' },
+}[lang]
+const concepts = data.concepts as Record<string, any>
+const entries = Object.values(concepts).sort((a: any, b: any) => a.label[lang].localeCompare(b.label[lang], lang))
+const label = (local: string) => concepts[local]?.label[lang] ?? local
+const sourceName = (url: string) => decodeURIComponent(url.replace(/\/$/, '').split('/').pop() ?? url)
+---
+
+<div class="rl-glossary">
+  {entries.map((c: any) => {
+    const alts = c.altLabels[lang] ?? []
+    const links = crossLinks(data.mappings, c.local, lang)
+    return (
+      <section class="rl-glossary-entry">
+        <h2 id={c.local}>
+          {c.label[lang]}
+          {c.status === 'proposed' && <Badge text={T.proposed} variant="caution" />}
+        </h2>
+        {alts.length > 0 && <p class="rl-glossary-alt">{T.also}: {alts.join(', ')}</p>}
+        <p>{c.definition[lang]}</p>
+        <ul class="rl-glossary-meta">
+          {c.broader.length > 0 && (
+            <li>{T.broader}: {c.broader.map((b: string, i: number) => <>{i > 0 && ', '}<a href={`#${b}`}>{label(b)}</a></>)}</li>
+          )}
+          {c.related.length > 0 && (
+            <li>{T.related}: {c.related.map((r: string, i: number) => <>{i > 0 && ', '}<a href={`#${r}`}>{label(r)}</a></>)}</li>
+          )}
+          {links.map((l) => (
+            <li class="rl-glossary-cross" data-relation={l.relation}>{l.worldName}: {l.phrase} <a href={l.url}>{l.label}</a></li>
+          ))}
+          {c.symbols.length > 0 && <li>{T.code}: {c.symbols.map((s: string, i: number) => <>{i > 0 && ', '}<code>{s}</code></>)}</li>}
+          <li>{T.source}: {c.sources.map((s: string, i: number) => <>{i > 0 && ', '}<a href={s}>{sourceName(s)}</a></>)}</li>
+        </ul>
+      </section>
+    )
+  })}
+</div>

@@ -1,0 +1,164 @@
+{
+ "world": "rls",
+ "concepts": {
+  "member": [
+   {
+    "relation": "exactMatch",
+    "world": "rltp",
+    "id": "rltp:Member",
+    "label": {
+     "de": "Mitglied",
+     "en": "Member"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Member",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Member"
+    }
+   }
+  ],
+  "mirror": [
+   {
+    "relation": "relatedMatch",
+    "world": "rls",
+    "id": "rls:multi-space-item",
+    "label": {
+     "de": "Item in mehreren Spaces",
+     "en": "Item in several spaces"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#multi-space-item",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#multi-space-item"
+    }
+   }
+  ],
+  "multi-space-item": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Sichtbarkeit",
+    "label": {
+     "de": "Sichtbarkeit",
+     "en": "Visibility"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rls",
+    "id": "rls:mirror",
+    "label": {
+     "de": "Spiegel",
+     "en": "Mirror"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#mirror",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#mirror"
+    }
+   }
+  ],
+  "profile": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Mensch",
+    "label": {
+     "de": "Mensch",
+     "en": "Person"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch"
+    }
+   }
+  ],
+  "relation": [
+   {
+    "relation": "falseFriend",
+    "world": "rlnp",
+    "id": "rlnp:Beziehung",
+    "label": {
+     "de": "Beziehung",
+     "en": "Relationship"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung"
+    }
+   }
+  ],
+  "space": [
+   {
+    "relation": "exactMatch",
+    "world": "rlnp",
+    "id": "rlnp:Kreis",
+    "label": {
+     "de": "Kreis",
+     "en": "Circle"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#kreis",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#kreis"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rltp",
+    "id": "rltp:Group",
+    "label": {
+     "de": "Gruppe",
+     "en": "Group"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Group",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Group"
+    }
+   }
+  ],
+  "verification": [
+   {
+    "relation": "exactMatch",
+    "world": "rlnp",
+    "id": "rlnp:Verifikation",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rltp",
+    "id": "rltp:Enactment",
+    "label": {
+     "de": "Begegnungsvorgang",
+     "en": "Enactment"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Enactment",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Enactment"
+    }
+   }
+  ],
+  "visibility": [
+   {
+    "relation": "convergesWith",
+    "world": "rlnp",
+    "id": "rlnp:Sichtbarkeit",
+    "label": {
+     "de": "Sichtbarkeit",
+     "en": "Visibility"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit"
+    }
+   }
+  ]
+ }
+}

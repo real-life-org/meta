@@ -17,6 +17,8 @@ jobs:
         run: python3 scripts/fetch_worlds.py
       - name: Check the term register
         run: python3 scripts/guard.py
+      - name: The cross-world links in views/<world>.json have the shape the theme reads
+        run: python3 scripts/test_render.py
       - name: Generated files are up to date
         run: |
           python3 scripts/render.py

@@ -1,0 +1,42 @@
+name: theme-release
+# npm TRUSTED PUBLISHING via GitHub OIDC — no long-lived token anywhere.
+# A theme-v* tag whose version matches packages/starlight-theme/package.json
+# publishes @real-life/starlight-theme with --provenance, so every tarball is
+# verifiably linked to the commit and workflow run that built it.
+#
+# Release procedure:
+#   git tag theme-v<version> && git push origin theme-v<version>
+# The tests run before the publish; a version that fails them never reaches
+# the registry. The first publish of the package and the trusted publisher on
+# npmjs.com are set up by hand.
+on:
+  push:
+    tags: ['theme-v*']
+permissions:
+  id-token: write   # OIDC for npm trusted publishing
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/starlight-theme
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      # trusted publishing needs npm >= 11.5.1
+      - run: npm install -g npm@latest
+      - name: tag must match packages/starlight-theme/package.json
+        run: |
+          TAG="${GITHUB_REF_NAME#theme-v}"
+          PKG="$(node -p "require('./package.json').version")"
+          if [ "$TAG" != "$PKG" ]; then
+            echo "tag theme-v$TAG does not match package version $PKG" >&2
+            exit 1
+          fi
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm publish --provenance --access public

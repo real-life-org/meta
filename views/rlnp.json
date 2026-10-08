@@ -1,0 +1,255 @@
+{
+ "world": "rlnp",
+ "concepts": {
+  "Begegnung": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Verifikation",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation"
+    }
+   }
+  ],
+  "Bezeugen": [
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:EncounterCredential",
+    "label": {
+     "de": "Begegnungs-Credential",
+     "en": "Encounter credential"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#EncounterCredential",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#EncounterCredential"
+    }
+   },
+   {
+    "relation": "convergesWith",
+    "world": "rltp",
+    "id": "rltp:Attestation",
+    "label": {
+     "de": "Attestation",
+     "en": "Attestation"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Attestation",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Attestation"
+    }
+   }
+  ],
+  "Beziehung": [
+   {
+    "relation": "narrowMatch",
+    "world": "rltp",
+    "id": "rltp:Edge",
+    "label": {
+     "de": "Kante",
+     "en": "Edge"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Edge",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Edge"
+    }
+   },
+   {
+    "relation": "convergesWith",
+    "world": "rltp",
+    "id": "rltp:Attestation",
+    "label": {
+     "de": "Attestation",
+     "en": "Attestation"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Attestation",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Attestation"
+    }
+   },
+   {
+    "relation": "falseFriend",
+    "world": "rls",
+    "id": "rls:relation",
+    "label": {
+     "de": "Relation",
+     "en": "Relation"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#relation",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#relation"
+    }
+   }
+  ],
+  "Kreis": [
+   {
+    "relation": "exactMatch",
+    "world": "rls",
+    "id": "rls:space",
+    "label": {
+     "de": "Space",
+     "en": "Space"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#space",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#space"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rltp",
+    "id": "rltp:Group",
+    "label": {
+     "de": "Gruppe",
+     "en": "Group"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Group",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Group"
+    }
+   }
+  ],
+  "Mensch": [
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:Anchor",
+    "label": {
+     "de": "Anker",
+     "en": "Anchor"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Anchor",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Anchor"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rls",
+    "id": "rls:profile",
+    "label": {
+     "de": "Personenprofil",
+     "en": "Person profile"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#profile",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#profile"
+    }
+   }
+  ],
+  "Rolle": [
+   {
+    "relation": "convergesWith",
+    "world": "rltp",
+    "id": "rltp:Attestation",
+    "label": {
+     "de": "Attestation",
+     "en": "Attestation"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Attestation",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Attestation"
+    }
+   }
+  ],
+  "Sichtbarkeit": [
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:VisibilityMode",
+    "label": {
+     "de": "Sichtbarkeitsmodus",
+     "en": "Visibility mode"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#VisibilityMode",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#VisibilityMode"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rls",
+    "id": "rls:multi-space-item",
+    "label": {
+     "de": "Item in mehreren Spaces",
+     "en": "Item in several spaces"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#multi-space-item",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#multi-space-item"
+    }
+   },
+   {
+    "relation": "convergesWith",
+    "world": "rls",
+    "id": "rls:visibility",
+    "label": {
+     "de": "Sichtbarkeit",
+     "en": "Visibility"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#visibility",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#visibility"
+    }
+   }
+  ],
+  "Verifikation": [
+   {
+    "relation": "exactMatch",
+    "world": "rls",
+    "id": "rls:verification",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#verification",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#verification"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rltp",
+    "id": "rltp:Enactment",
+    "label": {
+     "de": "Begegnungsvorgang",
+     "en": "Enactment"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Enactment",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Enactment"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:EncounterCredential",
+    "label": {
+     "de": "Begegnungs-Credential",
+     "en": "Encounter credential"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#EncounterCredential",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#EncounterCredential"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Begegnung",
+    "label": {
+     "de": "Begegnung",
+     "en": "Encounter"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#begegnung",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#begegnung"
+    }
+   }
+  ]
+ }
+}

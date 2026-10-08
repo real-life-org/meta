@@ -148,7 +148,7 @@
   },
   {
    "@id": "rltp:CommunityAnchor",
-   "skos:note": "Deliberately without counterpart in RLNP or the Stack: an ordinary member anchor that a person uses as a chosen cross-relationship coordinate is protocol construction, like every anchor (RLNP Mensch, related at rltp:Anchor). The Stack shows a profile, which is the view of a person, not an anchor."
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: the anchor a person uses as a chosen cross-relationship coordinate is protocol construction, like every anchor (RLNP Mensch, related at rltp:Anchor). The Stack shows a profile, which is the view of a person, not an anchor."
   },
   {
    "@id": "rltp:DeviceCard",

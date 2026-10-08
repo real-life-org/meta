@@ -50,6 +50,18 @@ Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-pro
 
 - related: **[Person](network.md#mensch) `rlnp:Mensch`** (Network)
 
+## Anchor mapping
+*Anker-Zuordnung*
+`rltp:AnchorMapping`
+
+The designated-verifier artifact (anchor-mapping@3) that links the sender's pair anchor in one relationship to the sender's current community anchor, for exactly one addressee: two MACs under keys agreed with that addressee, so only the addressee can verify it and either of the two could have produced it. It carries the lineage of the community anchor's rotations, so the addressee can follow a rotation.
+
+Das nur vom Adressaten prüfbare Artefakt (anchor-mapping@3), das den Paaranker des Senders in einer Beziehung mit seinem aktuellen Gemeinschaftsanker verknüpft, für genau einen Adressaten: zwei MACs unter Schlüsseln, die mit diesem Adressaten vereinbart sind, sodass nur er sie prüfen und jeder von beiden sie hätte erzeugen können. Es trägt die Linie der Rotationen des Gemeinschaftsankers, damit der Adressat einer Rotation folgen kann.
+
+Source: [network-visibility.md#61-purpose-and-construction](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#61-purpose-and-construction), [network-visibility.md#65-anchor-rotation1-and-the-rotation-of-the-community-anchor](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#65-anchor-rotation1-and-the-rotation-of-the-community-anchor)
+
+> Deliberately without counterpart in RLNP and the Stack: the designated-verifier link between a pair anchor and the community anchor is protocol construction, like every anchor (RLNP Sichtbarkeit decides who sees a person; this artifact is how one disclosure is built).
+
 ## Attestation
 *Attestation*
 `rltp:Attestation`
@@ -184,6 +196,18 @@ Signierte Selbstbeschreibung einer Person mit dem Material, um sie zu erkennen u
 Source: [encounter-layer.md#22-terms](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#22-terms), [encounter-layer.md#6-the-contact-card](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#6-the-contact-card)
 
 > Deliberately without counterpart in RLNP or the Stack: the card carries what the counterpart needs to reach and recognize an anchor; the Stack shows a profile, which is the view of a person, not a delivery address.
+
+## Continuity probe
+*Kontinuitäts-Probe*
+`rltp:ContinuityProbe`
+
+The blinded list (continuity-probe@1) that either party, preferably both, sends after an enactment: its own pair anchors of the relationships active before, padded to a multiple of 256 and keyed to the fresh pair. A match identifies a shared prior relationship, to which the fresh pair is chained; no match means a new contact. The default path of continuity, run on every enactment, independent of any disclosure.
+
+Die geblendete Liste (continuity-probe@1), die eine Seite, möglichst beide, nach einem Begegnungsvorgang sendet: die eigenen Paaranker der zuvor aktiven Beziehungen, aufgefüllt auf ein Vielfaches von 256 und an das frische Paar geschlüsselt. Ein Treffer erkennt eine gemeinsame frühere Beziehung, an die das frische Paar gekettet wird; kein Treffer bedeutet einen neuen Kontakt. Der Regelweg der Kontinuität, bei jedem Vorgang, unabhängig von jeder Offenlegung.
+
+Source: [network-visibility.md#6a-continuity-normative--the-other-half-of-encounter-44](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#6a-continuity-normative--the-other-half-of-encounter-44), [network-visibility.md#6a2-continuity-probe1--sequenced-chunked-padded-blinded](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#6a2-continuity-probe1--sequenced-chunked-padded-blinded)
+
+> Deliberately without counterpart in RLNP and the Stack: recognising a re-encounter is a construction detail of fresh pair anchors (mapped at rltp:Enactment).
 
 ## Credential digest
 *Credential-Digest*
@@ -355,6 +379,18 @@ Eine Kante aus lokaler Sicht, wenn die Partei ein Credential der Gegenseite ange
 Source: [encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair](https://github.com/real-life-org/trust-protocol/blob/main/spec/encounter-layer.md#42-the-edge-is-the-relation-and-it-is-per-anchor-pair)
 
 > Deliberately without counterpart in RLNP or the Stack: a direction state of rltp:Edge (only the counterpart has confirmed). For the person it is an unfinished verification; the Stack shows it as pending, not as a relationship.
+
+## Introduction
+*Vorstellung*
+`rltp:Introduction`
+
+The act by which a mediator who is a contact of both makes a requester known to a target: five messages (request, forward, reply, acknowledgement, voucher) over the existing relationship channels. The mediator transfers messages, never standing anchors; the fresh pair anchors of the new relationship are issued by their owners. The relationship carries the provenance introduction until its first completed enactment upgrades it to encounter, never downward.
+
+Der Akt, in dem ein Vermittler, der Kontakt beider ist, eine anfragende Person mit einer Zielperson bekannt macht: fünf Nachrichten (Anfrage, Weiterleitung, Antwort, Bestätigung, Voucher) über die bestehenden Beziehungskanäle. Der Vermittler überträgt Nachrichten, nie stehende Anker; die frischen Paaranker der neuen Beziehung stellen ihre Inhaber selbst aus. Die Beziehung trägt die Herkunft „Vorstellung“, bis der erste vollzogene Begegnungsvorgang sie auf „Begegnung“ hebt, nie umgekehrt.
+
+Source: [network-visibility.md#8-the-introduction-act-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#8-the-introduction-act-normative), [network-visibility.md#86-provenance-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#86-provenance-normative)
+
+> Deliberately without counterpart in RLNP and the Stack for now: RLNP forms relationships through Begegnung; an introduction is the protocol's second way to a relationship and is weaker until the two have met.
 
 ## Invite
 *Einladung*
@@ -586,6 +622,18 @@ Source: [access-layer.md#93-the-service](https://github.com/real-life-org/trust-
 
 > Deliberately without counterpart in RLNP or the Stack: what a service knows of a group (blind, view, log) is a registered protocol statement about rltp:Service, invisible to the person and the Stack.
 
+## Star
+*Stern*
+`rltp:Star`
+
+The artifact (star@1) by which a sender lets exactly one recipient relate the sender's contact set to the recipient's own: per deliverable contact only the count or the contact's anchor, blinded under a key for this direction and delivery. It is unsigned and recipient-forgeable, never carries a raw third-party anchor, and carries nothing about the sender's groups; those travel in the group star.
+
+Das Artefakt (star@1), mit dem ein Sender genau einem Empfänger erlaubt, die Kontaktmenge des Senders auf die eigene zu beziehen: je zustellbarem Kontakt nur die Zahl oder dessen Anker, geblendet unter einem Schlüssel für diese Richtung und Zustellung. Er ist unsigniert und vom Empfänger fälschbar, trägt nie einen rohen Anker Dritter und nichts über die Gruppen des Senders; die reisen im Gruppenstern.
+
+Source: [network-visibility.md#5-the-star-normative](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#5-the-star-normative), [network-visibility.md#53-the-star-must-not-be-signed](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md#53-the-star-must-not-be-signed)
+
+> Deliberately without counterpart in RLNP and the Stack: the blinded contact set is a construction for relational counts; RLNP speaks of the people two persons share, not of the artifact that finds them.
+
 ## Step
 *Schritt*
 `rltp:Step`
@@ -609,6 +657,18 @@ Der Modus, in dem eine Gruppe nach außen lesbar ist; Veröffentlichung läuft �
 Source: [access-layer.md#8-visibility-modes](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#8-visibility-modes), [network-visibility.md](https://github.com/real-life-org/trust-protocol/blob/main/spec/network-visibility.md)
 
 - related: **[Visibility](network.md#sichtbarkeit) `rlnp:Sichtbarkeit`** (Network)
+
+## Vouch
+*Bürgschaft*
+`rltp:Vouch`
+
+A member's signed statement for exactly one admission of exactly one person (vouch@2, a DTG EndorsementCredential), bound to that person's accept; a group's vouch rule counts it for this one admission and no later one. How the voucher knows the person, met or introduced, is their own word, not verified; an encounter credential is not a vouch.
+
+Die signierte Aussage eines Mitglieds für genau eine Aufnahme genau einer Person (vouch@2, ein DTG EndorsementCredential), gebunden an deren Annahme; eine Bürgschaftsregel der Gruppe zählt sie für diese eine Aufnahme und keine spätere. Wie der Bürge die Person kennt, begegnet oder vorgestellt, ist sein eigenes Wort, nicht geprüft; ein Begegnungs-Credential ist keine Bürgschaft.
+
+Source: [access-layer.md#53-admission-and-removal](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#53-admission-and-removal), [access-layer.md#42-requirement-types](https://github.com/real-life-org/trust-protocol/blob/main/spec/access-layer.md#42-requirement-types)
+
+- related: **[Witnessing](network.md#bezeugen) `rlnp:Bezeugen`** (Network)
 
 ## Welcome
 *Willkommen*

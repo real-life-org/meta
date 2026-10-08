@@ -15,7 +15,7 @@
   "rltp": {
    "repo": "real-life-org/trust-protocol",
    "path": "terms/rltp.skos.jsonld",
-   "ref": "46d0a96ed22e0fe622fcd7adb7590a082a53bb7c",
+   "ref": "77f5fced880090884a8215c128f13fddaec4ab55",
    "branch": "main",
    "glossary": {
     "de": "https://trust-protocol.real-life.org/reference/glossary/",

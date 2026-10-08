@@ -1,0 +1,190 @@
+{
+ "world": "rltp",
+ "concepts": {
+  "Anchor": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Mensch",
+    "label": {
+     "de": "Mensch",
+     "en": "Person"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch"
+    }
+   }
+  ],
+  "Attestation": [
+   {
+    "relation": "convergesWith",
+    "world": "rlnp",
+    "id": "rlnp:Bezeugen",
+    "label": {
+     "de": "Bezeugen",
+     "en": "Witnessing"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen"
+    }
+   },
+   {
+    "relation": "convergesWith",
+    "world": "rlnp",
+    "id": "rlnp:Rolle",
+    "label": {
+     "de": "Rolle",
+     "en": "Role"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#rolle",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#rolle"
+    }
+   },
+   {
+    "relation": "convergesWith",
+    "world": "rlnp",
+    "id": "rlnp:Beziehung",
+    "label": {
+     "de": "Beziehung",
+     "en": "Relationship"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung"
+    }
+   }
+  ],
+  "Edge": [
+   {
+    "relation": "broadMatch",
+    "world": "rlnp",
+    "id": "rlnp:Beziehung",
+    "label": {
+     "de": "Beziehung",
+     "en": "Relationship"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#beziehung"
+    }
+   }
+  ],
+  "Enactment": [
+   {
+    "relation": "exactMatch",
+    "world": "rlnp",
+    "id": "rlnp:Verifikation",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rls",
+    "id": "rls:verification",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#verification",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#verification"
+    }
+   }
+  ],
+  "EncounterCredential": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Verifikation",
+    "label": {
+     "de": "Verifikation",
+     "en": "Verification"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#verifikation"
+    }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Bezeugen",
+    "label": {
+     "de": "Bezeugen",
+     "en": "Witnessing"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen"
+    }
+   }
+  ],
+  "Group": [
+   {
+    "relation": "exactMatch",
+    "world": "rlnp",
+    "id": "rlnp:Kreis",
+    "label": {
+     "de": "Kreis",
+     "en": "Circle"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#kreis",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#kreis"
+    }
+   },
+   {
+    "relation": "exactMatch",
+    "world": "rls",
+    "id": "rls:space",
+    "label": {
+     "de": "Space",
+     "en": "Space"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#space",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#space"
+    }
+   }
+  ],
+  "Member": [
+   {
+    "relation": "exactMatch",
+    "world": "rls",
+    "id": "rls:member",
+    "label": {
+     "de": "Mitglied",
+     "en": "Member"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#member",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#member"
+    }
+   }
+  ],
+  "VisibilityMode": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Sichtbarkeit",
+    "label": {
+     "de": "Sichtbarkeit",
+     "en": "Visibility"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit"
+    }
+   }
+  ]
+ }
+}

@@ -1,23 +1,36 @@
 {
- "comment": "Where each world's concept scheme lives: repository, file, pinned commit. scripts/fetch_worlds.py checks the pinned commit out under worlds/<world>; guard, renderer and the site read from there. 'branch' is the default branch, used for edit links.",
+ "comment": "Where each world's concept scheme lives: repository, file, pinned commit. scripts/fetch_worlds.py checks the pinned commit out under worlds/<world>; guard, renderer and the site read from there. 'branch' is the default branch, used for edit links. 'glossary' is the address of the world's glossary page per language; scripts/render.py builds the cross-world links in views/<world>.json from it ('anchor': 'heading' when the page anchors entries by their heading, not by local name).",
  "schemes": {
   "rlnp": {
    "repo": "real-life-org/real-life-network-protocol",
    "path": "terms/rlnp.skos.jsonld",
    "ref": "9604daa4accff5fe8aba9b47868e0d06f8974a53",
-   "branch": "main"
+   "branch": "main",
+   "glossary": {
+    "de": "https://github.com/real-life-org/meta/blob/main/views/network.md",
+    "en": "https://github.com/real-life-org/meta/blob/main/views/network.md",
+    "anchor": "heading"
+   }
   },
   "rltp": {
    "repo": "real-life-org/trust-protocol",
    "path": "terms/rltp.skos.jsonld",
    "ref": "5938dd781729878f3cbc20f4b98156fc7a5a4189",
-   "branch": "main"
+   "branch": "main",
+   "glossary": {
+    "de": "https://trust-protocol.real-life.org/reference/glossary/",
+    "en": "https://trust-protocol.real-life.org/reference/glossary/"
+   }
   },
   "rls": {
    "repo": "real-life-org/real-life-stack",
    "path": "docs/reference/rls.skos.jsonld",
    "ref": "9e62cd1994544f4a0b74e0fe0c11e7cd18143c9e",
-   "branch": "master"
+   "branch": "master",
+   "glossary": {
+    "de": "https://real-life-stack.de/handbuch/glossar/",
+    "en": "https://real-life-stack.de/en/handbuch/glossar/"
+   }
   }
  }
 }

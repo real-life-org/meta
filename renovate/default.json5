@@ -1,0 +1,162 @@
+{
+  // Shared Renovate preset for the real-life-org repos.
+  //
+  //   extends: ['github>real-life-org/meta//renovate/default.json5']
+  //
+  // Three stages, in decreasing urgency:
+  //
+  //   1. Security, everywhere and at once: every dependency with a known
+  //      vulnerability gets its own PR, regardless of schedule or grouping.
+  //   2. Our own packages (`@real-life/**`, `@web_of_trust/**`) as soon as
+  //      they are released, one PR per family.
+  //   3. Everything else once a month, as ONE grouped PR per repo. Majors
+  //      (and minors that break, i.e. within `0.x`) only after approval in
+  //      the Dependency Dashboard.
+  //
+  // Why not "one PR per update, any time" (Renovate's default): it opens a
+  // flood of PRs nobody reads. Unread bump PRs are worse than none, because
+  // they give the impression the topic is taken care of. Each stage here
+  // produces only PRs someone will actually look at: security fixes, our own
+  // releases (which we want to reach every consumer), and one monthly batch
+  // whose size stays reviewable.
+  //
+  // Why stage 2 exists at all: lockfiles freeze versions. `npm ci` /
+  // `pnpm install --frozen-lockfile` never re-resolve `^0.2.9`; only the
+  // lockfile counts. A fix released on npm reaches a consumer only when
+  // someone bumps it. In real-life-stack, a crash fix in
+  // @web_of_trust/adapter-yjs sat on npm for weeks without reaching the app.
+  //
+  // The workflow that runs Renovate lives next to this file in
+  // `.github/workflows/renovate.yml` (reusable, `workflow_call`).
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+
+  // One overview issue instead of silent work: what Renovate sees, what it
+  // holds back and why, and the checkboxes that approve majors (stage 3).
+  dependencyDashboard: true,
+
+  // Schedules below are read in this time zone.
+  timezone: 'Europe/Berlin',
+
+  // ── Stage 1: security ─────────────────────────────────────────────────
+  //
+  // Vulnerability data from the OSV database (osv.dev). Renovate queries it
+  // itself; no token right is involved.
+  osvVulnerabilityAlerts: true,
+
+  // The config applied to every security PR, from OSV or from GitHub's
+  // Dependabot alerts. Renovate's defaults already bypass `schedule`,
+  // grouping and `dependencyDashboardApproval` here.
+  //
+  // `enabled: true` is what lets a security PR through even for a package a
+  // repo has switched off with `enabled: false` in its own packageRules:
+  // Renovate applies this object as a FORCE on top of all packageRules.
+  //
+  // CAUTION, and the reason this is not `enabled: false` as real-life-stack
+  // had it: the same `enabled` flag also switches off the OSV-derived PRs
+  // (Renovate copies this object into every OSV rule as `force`). There is
+  // no setting that keeps OSV and skips GitHub's alert API. Consequence: on
+  // repos where Dependabot alerts are switched on, Renovate also reads them,
+  // and the token needs `Dependabot alerts: read`. Without it Renovate warns
+  // on every run and pins that warning as "Repository Problems" on top of
+  // the dashboard. The fix is the read right on the token, not disabling
+  // this.
+  vulnerabilityAlerts: {
+    enabled: true,
+  },
+
+  packageRules: [
+    // ── Stage 3: everything else, monthly, one PR ───────────────────────
+    //
+    // All non-major updates of every manager (npm, GitHub Actions, Docker …)
+    // in one branch per repo. A list of only negations matches every package
+    // except those: stage 2 and the self-pin stay out of the batch and have
+    // their own rules below.
+    //
+    // `* * 1 * *` = the whole first day of the month. The Renovate workflow
+    // runs once a day early in the morning, so the PR arrives then; a
+    // narrower window would silently miss the month if a repo's cron lies
+    // outside it.
+    {
+      matchPackageNames: [
+        '!@real-life/**',
+        '!@web_of_trust/**',
+        '!renovatebot/github-action',
+      ],
+      matchUpdateTypes: ['minor', 'patch', 'pin', 'pinDigest', 'digest'],
+      groupName: 'monthly maintenance',
+      schedule: ['* * 1 * *'],
+    },
+    // Majors break things by definition and each needs its own reading.
+    // They are listed in the dashboard and only get a PR (one per package,
+    // no schedule) once someone ticks the box there.
+    {
+      matchPackageNames: [
+        '!@real-life/**',
+        '!@web_of_trust/**',
+        '!renovatebot/github-action',
+      ],
+      matchUpdateTypes: ['major'],
+      dependencyDashboardApproval: true,
+    },
+    // The same for a minor that breaks: under semver, `0.x` has no stable
+    // API, so 0.7 → 0.12 counts as `minor` for Renovate but may break like a
+    // major. Inside the monthly group one such update turns the whole batch
+    // red and holds back every harmless patch with it. So it leaves the group
+    // and waits for approval like a major. Patches within `0.x` stay in the
+    // group (`matchUpdateTypes` keeps them out of this rule).
+    {
+      matchPackageNames: [
+        '!@real-life/**',
+        '!@web_of_trust/**',
+        '!renovatebot/github-action',
+      ],
+      matchUpdateTypes: ['minor'],
+      matchIsBreaking: true,
+      groupName: null,
+      schedule: ['at any time'],
+      dependencyDashboardApproval: true,
+    },
+
+    // ── Stage 2: our own packages, immediately ──────────────────────────
+    //
+    // No schedule: a release of ours should reach every consumer the next
+    // morning. One PR per family: packages of one family depend on each
+    // other in exactly matching versions (adapter-yjs needs core as a peer
+    // in the same minor); opened separately, each PR on its own would be red.
+    //
+    // `rangeStrategy: 'bump'`: move the range in package.json along with the
+    // lockfile. Otherwise the declared range drifts away from what we test:
+    // we would publish `^0.2.5` and test 0.2.9, and anyone installing our
+    // package fresh gets a combination that never ran here.
+    {
+      matchPackageNames: ['@web_of_trust/**'],
+      groupName: 'Web of Trust packages',
+      rangeStrategy: 'bump',
+    },
+    {
+      matchPackageNames: ['@real-life/**'],
+      groupName: 'Real Life packages',
+      rangeStrategy: 'bump',
+    },
+
+    // ── Renovate keeps its own runner current ───────────────────────────
+    //
+    // The reusable workflow pins `renovatebot/github-action` to a commit SHA
+    // (the repo has no floating major tags, and a tag can be moved). A pinned
+    // SHA goes stale without anyone noticing: the run stays green until the
+    // old version breaks on some registry change. So the bot moves its own
+    // pin, SHA and version comment together, as soon as a release appears,
+    // majors included. Only the repo that holds the workflow (meta) has this
+    // dependency; elsewhere the rule matches nothing.
+    //
+    // PRICE: changing `.github/workflows/` needs `Workflows: read+write` on
+    // the token; GitHub rejects the push otherwise. It is the most powerful
+    // of the token's rights. Mitigation: the change arrives as a PR against
+    // a protected default branch.
+    {
+      matchManagers: ['github-actions'],
+      matchDepNames: ['renovatebot/github-action'],
+      groupName: 'Renovate action',
+    },
+  ],
+}

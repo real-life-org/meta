@@ -1,0 +1,9 @@
+{
+  // Dependency updates for meta itself (docs-kit's dev dependencies, the
+  // GitHub Actions in .github/workflows, and the Renovate runner's own pin).
+  // The rules live in the shared preset next door, which every real-life-org
+  // repo extends: renovate/default.json5. The runner is
+  // .github/workflows/renovate.yml.
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['github>real-life-org/meta//renovate/default.json5'],
+}

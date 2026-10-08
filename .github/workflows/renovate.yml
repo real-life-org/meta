@@ -1,0 +1,144 @@
+# Renovate for the real-life-org repos, self-hosted: the bot runs as an
+# Action on GitHub's runners under our account, not as a third party's hosted
+# app.
+#
+# The usual alternative is the Renovate GitHub App (Mend). It is more
+# convenient, but needs a stranger's permanent write access to every repo.
+# Here the same program runs in our own workflow. The price: we move the
+# action version ourselves and pay Actions minutes.
+#
+# This file does two jobs:
+#
+#   - `workflow_call`: the REUSABLE workflow every other repo calls, so the
+#     runner, its pin and its environment exist exactly once. A caller looks
+#     like this (the job needs the write permissions; a reusable workflow can
+#     only narrow what the caller grants, never widen it):
+#
+#       on:
+#         schedule: [{ cron: '17 4 * * *' }]
+#         workflow_dispatch:
+#       permissions:
+#         contents: read
+#       jobs:
+#         renovate:
+#           permissions:
+#             contents: write
+#             pull-requests: write
+#             issues: write
+#           uses: real-life-org/meta/.github/workflows/renovate.yml@main
+#           secrets:
+#             RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+#
+#   - `schedule` / `workflow_dispatch`: meta's own run.
+#
+# Callers reference `@main`, not a SHA. This is our own repo, changes reach
+# main only through PRs, and the point of sharing the workflow is that a fix
+# here (a new action pin, an env change) reaches every repo at once. A SHA per
+# caller would be one more pin per repo that drifts.
+#
+# What the bot DOES is not configured here but in each repo's
+# `renovate.json5`, which extends the shared preset in `renovate/default.json5`.
+# Renovate clones the repo and reads it from there. Deliberately NO
+# `configurationFile` below: that parameter means the GLOBAL configuration of
+# the run, not the repo's, and would not replace the repo file but open a
+# second layer.
+name: Renovate
+
+on:
+  workflow_call:
+    secrets:
+      RENOVATE_TOKEN:
+        description: >-
+          Fine-grained token for the calling repo only. Without it Renovate
+          falls back to GITHUB_TOKEN, and its PRs arrive without checks.
+        required: false
+  # Once a day, early. More often brings nothing: our packages are not
+  # released hourly, and every run clones the repo and queries the registry.
+  schedule:
+    - cron: '17 4 * * *'
+  # For the first run after the merge, and to look without waiting a day.
+  workflow_dispatch:
+
+# Only the baseline. The write permissions are on the job, and there only for
+# the fallback below: with its own token, Renovate works with THAT token's
+# rights, not with those of GITHUB_TOKEN.
+permissions:
+  contents: read
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      # For the Dependency Dashboard, which is an issue.
+      issues: write
+    # Two Renovate runs on the same repo would fight over the same branches.
+    # The running one may finish, a second one waits. Set on the job, not on
+    # the workflow, so a caller that also names a `renovate` group cannot
+    # deadlock against it. `github.repository` is the CALLER's repo here.
+    concurrency:
+      group: renovate-${{ github.repository }}
+      cancel-in-progress: false
+    steps:
+      # Renovate clones the repo itself; this checkout only gives the action
+      # its working tree. `persist-credentials: false`: the git config should
+      # not carry a token nobody here needs.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      # Pinned to a commit SHA, not a tag. Two reasons: the repo keeps no
+      # floating major tags (there is no `v46`, only `v46.3.1` and siblings;
+      # `@v46` runs into a 404 and the workflow never starts), and a tag can
+      # be moved, a SHA cannot. This step gets a token with write access;
+      # what it runs should be fixed.
+      #
+      # Renovate moves this SHA itself: see the last packageRule in
+      # `renovate/default.json5`, which watches exactly this action. Moved by
+      # hand it would drift silently.
+      - uses: renovatebot/github-action@230ce922b08968d0a4f6f70f295601daff09ef1d # v46.3.7
+        with:
+          # Own token instead of GITHUB_TOKEN: GitHub starts NO workflows for
+          # events triggered with GITHUB_TOKEN. A bump PR created that way
+          # gets no checks, and a missing required check blocks the merge for
+          # good. A bump PR the tests never run against is worthless anyway:
+          # the whole exercise is to show the new version is green here.
+          #
+          # The fallback keeps the workflow running while the secret is
+          # missing: PRs then arrive without checks and need one manual nudge
+          # (close and reopen, or push an empty commit), instead of Renovate
+          # not running at all.
+          #
+          # Rights (fine-grained, the calling repo only):
+          #   Contents: read+write · Pull requests: read+write ·
+          #   Issues: read+write · Workflows: read+write ·
+          #   Dependabot alerts: read
+          #
+          # Issues, because the Dependency Dashboard is an issue.
+          #
+          # Workflows, because Renovate edits workflow files: in meta the SHA
+          # pin of this one, everywhere the GitHub Actions in the monthly
+          # batch and in approved majors (`actions/checkout` …). GitHub rejects any push touching
+          # `.github/workflows/` without it, and the run fails only at push
+          # time, not while planning. It is the most powerful right here: with
+          # it the bot can rewrite any CI file. Against that: its changes
+          # arrive as PRs.
+          #
+          # Dependabot alerts (read), because security PRs are on
+          # (`vulnerabilityAlerts.enabled` in the preset), and on a repo with
+          # Dependabot alerts switched on Renovate then also reads them.
+          # Without the right it warns on every run, and the warning sits as
+          # "Repository Problems" on top of the dashboard. The OSV data that
+          # drives most security PRs needs no right at all.
+          token: ${{ secrets.RENOVATE_TOKEN || github.token }}
+        env:
+          # Without this, Renovate collects its repos itself (autodiscover)
+          # and would run over everything the token can reach. Exactly one
+          # repo, named explicitly: the one that triggered this run.
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          RENOVATE_AUTODISCOVER: 'false'
+          # The bot acts as the token owner; commits still need an author
+          # address, or git refuses them.
+          RENOVATE_GIT_AUTHOR: 'Renovate <bot@renovateapp.com>'
+          LOG_LEVEL: info

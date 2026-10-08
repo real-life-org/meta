@@ -73,11 +73,13 @@ html:lang(de) .rl-term-wrap [lang='en'] {
 
 /* The glossary page. */
 .rl-glossary-entry h2 {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
   scroll-margin-top: calc(var(--sl-nav-height) + 1rem);
+}
+.rl-glossary-entry h2 .sl-badge {
+  margin-inline-start: 0.5rem;
+  vertical-align: middle;
 }
 .rl-glossary-alt {
   color: var(--sl-color-gray-3);

@@ -49,7 +49,7 @@
    "@id": "rlnp:Bezeugen",
    "skos:relatedMatch": "rltp:EncounterCredential",
    "rl:convergesWith": "rltp:Attestation",
-   "skos:note": "Target: a general attestation type in RLTP (candidate: DTG Endorsement Credential). Until then only the encounter has an artifact."
+   "skos:note": "Target: a general attestation type in RLTP (candidate: DTG Endorsement Credential). Until then its artifacts are the encounter credential and, inside a group, the vouch for one admission; neither is a general attestation."
   },
   {
    "@id": "rltp:Member",

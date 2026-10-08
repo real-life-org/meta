@@ -66,3 +66,13 @@ test('all problems are reported at once', () => {
 test('a single source string becomes a list', () => {
   assert.deepEqual(loadScheme({ '@graph': [concept()] }).concepts.a.sources, ['https://example.org/a'])
 })
+
+test('a concept from another namespace is an error, reported with the others', () => {
+  const doc = {
+    '@graph': [
+      { '@id': 'rltp:A', '@type': 'skos:Concept', 'skos:prefLabel': [{ '@value': 'A', '@language': 'en' }, { '@value': 'A', '@language': 'de' }], 'skos:definition': [{ '@value': 'a', '@language': 'en' }, { '@value': 'a', '@language': 'de' }] },
+      { '@id': 'rls:B', '@type': 'skos:Concept', 'skos:prefLabel': [{ '@value': 'B', '@language': 'en' }], 'skos:definition': [{ '@value': 'b', '@language': 'en' }, { '@value': 'b', '@language': 'de' }] },
+    ],
+  }
+  assert.throws(() => loadScheme(doc), (e) => /rls:B: not in namespace rltp/.test(e.message) && /rls:B: skos:prefLabel missing in de/.test(e.message))
+})

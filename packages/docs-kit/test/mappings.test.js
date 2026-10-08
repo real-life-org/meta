@@ -73,3 +73,32 @@ test('a mapping within the same world links into the page', () => {
   const [link] = crossLinks(json('rls.json'), 'multi-space-item', 'de').filter((l) => l.world === 'rls')
   assert.equal(link.url, '#mirror')
 })
+
+test('malformed concept entries make the whole view null with a warning, never a crash later', async () => {
+  const { writeFileSync, mkdtempSync } = await import('node:fs')
+  const { join } = await import('node:path')
+  const { tmpdir } = await import('node:os')
+  const dir = mkdtempSync(join(tmpdir(), 'docs-kit-'))
+  const good = { relation: 'exactMatch', world: 'rls', id: 'rls:member', label: { de: 'Mitglied', en: 'Member' }, url: { de: 'u', en: 'u' } }
+  const bad = [
+    { world: 'rltp', concepts: { Member: null } },
+    { world: 'rltp', concepts: { Member: {} } },
+    { world: 'rltp', concepts: { Member: [null] } },
+    { world: 'rltp', concepts: { Member: [{ ...good, id: 7 }] } },
+    { world: 'rltp', concepts: { Member: [{ ...good, relation: undefined }] } },
+    { world: 'rltp', concepts: { Member: [{ ...good, label: 'Member' }] } },
+  ]
+  for (const [i, view] of bad.entries()) {
+    const file = join(dir, `bad-${i}.json`)
+    writeFileSync(file, JSON.stringify(view))
+    const warnings = []
+    const m = await readMappings(file, { warn: (w) => warnings.push(w) })
+    assert.equal(m, null, JSON.stringify(view))
+    assert.equal(warnings.length, 1)
+    assert.deepEqual(crossLinks(m, 'Member', 'en'), [])
+  }
+  const file = join(dir, 'good.json')
+  writeFileSync(file, JSON.stringify({ world: 'rltp', concepts: { Member: [good] } }))
+  const m = await readMappings(file, { warn: () => assert.fail('no warning expected') })
+  assert.equal(crossLinks(m, 'Member', 'en')[0].label, 'Member')
+})

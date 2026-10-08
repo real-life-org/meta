@@ -33,6 +33,11 @@ export function crossLinks(mappings, local, lang) {
   }))
 }
 
+const isText = (v) => typeof v === 'string'
+const isByLang = (v) => typeof v === 'object' && v !== null && Object.values(v).every(isText)
+const isLink = (e) =>
+  typeof e === 'object' && e !== null && isText(e.relation) && isText(e.world) && isText(e.id) && isByLang(e.label) && (e.url === undefined || isByLang(e.url))
+
 /**
  * Reads the view from a path or an http(s) URL. Fail-soft: anything wrong
  * yields `null` and one warning, so a missing view never breaks a build.
@@ -46,6 +51,8 @@ export async function readMappings(source, { warn = console.warn, fetch: get = g
       data = await res.json()
     } else data = JSON.parse(await readFile(source, 'utf8'))
     if (typeof data?.world !== 'string' || typeof data?.concepts !== 'object' || data.concepts === null) throw new Error('not a views/<world>.json file')
+    for (const [local, entries] of Object.entries(data.concepts))
+      if (!Array.isArray(entries) || !entries.every(isLink)) throw new Error(`malformed entry for ${local}`)
     return data
   } catch (e) {
     warn(`cross-world links unavailable (${source}): ${e.message}`)

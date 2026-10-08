@@ -19,15 +19,21 @@ npm install @real-life/docs-kit
 ```js
 // astro.config.mjs
 import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'astro/config'
 import starlight from '@astrojs/starlight'
 import docsKit from '@real-life/docs-kit'
 
-starlight({
-  plugins: [docsKit({
-    world: 'rls',
-    scheme: fileURLToPath(new URL('../../docs/reference/rls.skos.jsonld', import.meta.url)),
-    glossary: { de: '/handbuch/glossar/', en: '/en/handbuch/glossar/' },
-  })],
+export default defineConfig({
+  integrations: [
+    starlight({
+      title: 'Real Life Stack',
+      plugins: [docsKit({
+        world: 'rls',
+        scheme: fileURLToPath(new URL('../../docs/reference/rls.skos.jsonld', import.meta.url)),
+        glossary: { de: '/handbuch/glossar/', en: '/en/handbuch/glossar/' },
+      })],
+    }),
+  ],
 })
 ```
 

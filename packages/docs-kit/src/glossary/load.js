@@ -36,7 +36,9 @@ export function loadScheme(source) {
   let world
   for (const n of nodes) {
     const id = n['@id']
-    world ??= id.slice(0, id.indexOf(':'))
+    const prefix = id.slice(0, id.indexOf(':'))
+    world ??= prefix
+    if (prefix !== world) problems.push(`${id}: not in namespace ${world}`)
     const label = byLang(n['skos:prefLabel'])
     const definition = byLang(n['skos:definition'])
     for (const [field, values] of [['skos:prefLabel', label], ['skos:definition', definition]])

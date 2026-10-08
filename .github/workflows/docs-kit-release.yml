@@ -39,4 +39,6 @@ jobs:
           fi
       - run: npm ci --no-audit --no-fund
       - run: npm test
+      - run: npm run audit
+      - run: npm run check:pack
       - run: npm publish --provenance --access public

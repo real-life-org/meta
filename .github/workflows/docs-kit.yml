@@ -31,5 +31,7 @@ jobs:
           cache-dependency-path: packages/docs-kit/package-lock.json
       - run: npm ci --no-audit --no-fund
       - run: npm test
-      - name: What would be published
-        run: npm pack --dry-run
+      - name: No known vulnerability in the dependency tree
+        run: npm run audit
+      - name: The tarball holds only README, package.json and src
+        run: npm run check:pack

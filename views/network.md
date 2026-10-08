@@ -28,8 +28,11 @@ Quelle: [real-life-network-protocol.md#84-bezeugen](https://github.com/real-life
 
 - verwandt: **[Begegnungs-Credential](trust.md#encounter-credential)** (Protokoll)
 - Ziel: gleich mit: **[Attestation](trust.md#attestation)** (Protokoll)
+- verwandt: **[Bürgschaft](trust.md#vouch)** (Protokoll)
 
 > Target: a general attestation type in RLTP (candidate: DTG Endorsement Credential). Until then only the encounter has an artifact.
+
+> A vouch is one member's signed word for one admission of one person inside a group; RLNP's Bezeugen is broader. Related, not equal.
 
 ## Beziehung
 *Relationship*

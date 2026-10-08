@@ -42,6 +42,19 @@
      "de": "https://trust-protocol.real-life.org/reference/glossary/#Attestation",
      "en": "https://trust-protocol.real-life.org/reference/glossary/#Attestation"
     }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:Vouch",
+    "label": {
+     "de": "Bürgschaft",
+     "en": "Vouch"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Vouch",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Vouch"
+    }
    }
   ],
   "Beziehung": [

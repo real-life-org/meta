@@ -257,6 +257,27 @@
   {
    "@id": "rltp:AdmissionEvidence",
    "skos:note": "Deliberately without counterpart in RLNP or the Stack: the complete invite and accept, optionally with vouches, relayed to a member who may admit, so that any such member can complete the admission. It grants nothing; RLNP's Bezeugen is the human act of vouching, which rltp:Attestation covers."
+  },
+  {
+   "@id": "rltp:AnchorMapping",
+   "skos:note": "Deliberately without counterpart in RLNP and the Stack: the designated-verifier link between a pair anchor and the community anchor is protocol construction, like every anchor (RLNP Sichtbarkeit decides who sees a person; this artifact is how one disclosure is built)."
+  },
+  {
+   "@id": "rltp:Star",
+   "skos:note": "Deliberately without counterpart in RLNP and the Stack: the blinded contact set is a construction for relational counts; RLNP speaks of the people two persons share, not of the artifact that finds them."
+  },
+  {
+   "@id": "rltp:ContinuityProbe",
+   "skos:note": "Deliberately without counterpart in RLNP and the Stack: recognising a re-encounter is a construction detail of fresh pair anchors (mapped at rltp:Enactment)."
+  },
+  {
+   "@id": "rltp:Introduction",
+   "skos:note": "Deliberately without counterpart in RLNP and the Stack for now: RLNP forms relationships through Begegnung; an introduction is the protocol's second way to a relationship and is weaker until the two have met."
+  },
+  {
+   "@id": "rlnp:Bezeugen",
+   "skos:relatedMatch": "rltp:Vouch",
+   "skos:note": "A vouch is one member's signed word for one admission of one person inside a group; RLNP's Bezeugen is broader. Related, not equal."
   }
  ]
 }

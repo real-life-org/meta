@@ -185,6 +185,21 @@
      "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#sichtbarkeit"
     }
    }
+  ],
+  "Vouch": [
+   {
+    "relation": "relatedMatch",
+    "world": "rlnp",
+    "id": "rlnp:Bezeugen",
+    "label": {
+     "de": "Bezeugen",
+     "en": "Witnessing"
+    },
+    "url": {
+     "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen",
+     "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#bezeugen"
+    }
+   }
   ]
  }
 }

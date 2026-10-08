@@ -2,10 +2,10 @@
 /**
  * The glossary page body: every concept of the site's world, sorted by its
  * label in the page language, anchored by local name (`#Member`, `#space`).
- * Data comes from the `realLifeTheme` plugin (register + cross-world view).
+ * Data comes from the `docsKit` plugin (register + cross-world view).
  */
 import { Badge } from '@astrojs/starlight/components'
-import data from 'virtual:real-life-theme/glossary'
+import data from 'virtual:real-life-docs-kit/glossary'
 import { crossLinks } from './mappings.js'
 
 interface Props {

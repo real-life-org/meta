@@ -1,6 +1,6 @@
-# @real-life/starlight-theme
+# @real-life/docs-kit
 
-The Starlight theme the sites of the Real Life family share
+The kit the documentation sites of the Real Life family share: a Starlight plugin with components
 (trust-protocol.real-life.org, real-life-stack.de). First module: the
 **glossary** — terms marked in the text open a popover with their definition,
 and one glossary page per site lists every term of the site's world with its
@@ -13,17 +13,17 @@ for `.md` and `.mdx` alike.
 ## Install
 
 ```sh
-npm install @real-life/starlight-theme
+npm install @real-life/docs-kit
 ```
 
 ```js
 // astro.config.mjs
 import { fileURLToPath } from 'node:url'
 import starlight from '@astrojs/starlight'
-import realLifeTheme from '@real-life/starlight-theme'
+import docsKit from '@real-life/docs-kit'
 
 starlight({
-  plugins: [realLifeTheme({
+  plugins: [docsKit({
     world: 'rls',
     scheme: fileURLToPath(new URL('../../docs/reference/rls.skos.jsonld', import.meta.url)),
     glossary: { de: '/handbuch/glossar/', en: '/en/handbuch/glossar/' },
@@ -65,7 +65,7 @@ One MDX page per site and language:
 ---
 title: Glossary
 ---
-import Glossary from '@real-life/starlight-theme/Glossary.astro'
+import Glossary from '@real-life/docs-kit/Glossary.astro'
 
 <Glossary />
 ```
@@ -94,5 +94,5 @@ npm ci
 npm test
 ```
 
-Release: tag `theme-v<version>` matching `package.json`; the
-`theme-release` workflow publishes with provenance.
+Release: tag `docs-kit-v<version>` matching `package.json`; the
+`docs-kit-release` workflow publishes with provenance.

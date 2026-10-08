@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Renders one view per door from the federated register into views/: a Markdown page per door,
 and per world a JSON file with each concept's links into the other worlds (views/<world>.json),
-which the Starlight theme (packages/starlight-theme) shows in each site's glossary."""
+which the docs kit (packages/docs-kit) shows in each site's glossary."""
 import json
 from terms_lib import load, lang, aslist, ROOT
 REL = {"de": {"skos:exactMatch":"gleich","skos:closeMatch":"nahezu gleich","skos:relatedMatch":"verwandt","skos:narrowMatch":"allgemeiner als","skos:broadMatch":"spezieller als","rl:falseFriend":"falscher Freund","rl:convergesWith":"Ziel: gleich mit"},

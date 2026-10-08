@@ -1,14 +1,14 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { fileURLToPath } from 'node:url'
-import realLifeTheme, { VIRTUAL_ID } from '../src/index.js'
+import docsKit, { VIRTUAL_ID } from '../src/index.js'
 import { remarkTerms } from '../src/glossary/remark.js'
 
 const fixtures = fileURLToPath(new URL('./fixtures/', import.meta.url))
 
 async function setup(options, config = { customCss: ['./src/site.css'] }, processor = satteriProcessor()) {
   const calls = { updates: [], integrations: [], warnings: [], astro: [], scripts: [] }
-  const plugin = realLifeTheme(options)
+  const plugin = docsKit(options)
   await plugin.hooks['config:setup']({
     config,
     updateConfig: (c) => calls.updates.push(c),
@@ -26,7 +26,7 @@ const base = { world: 'rltp', scheme: `${fixtures}rltp.skos.jsonld`, glossary: {
 
 test('adds the CSS before the site CSS', async () => {
   const { updates } = await setup({ ...base, mappings: `${fixtures}rltp.json` })
-  assert.deepEqual(updates[0].customCss, ['@real-life/starlight-theme/glossary.css', './src/site.css'])
+  assert.deepEqual(updates[0].customCss, ['@real-life/docs-kit/glossary.css', './src/site.css'])
 })
 
 test('registers the term plugin with Sätteri, Astro 7\'s default processor for .md and .mdx', async () => {
@@ -57,7 +57,7 @@ test('an unknown processor fails instead of silently leaving term links', async 
 
 test('injects the hover script on every page', async () => {
   const { scripts } = await setup({ ...base, mappings: false })
-  assert.deepEqual(scripts, [['page', "import '@real-life/starlight-theme/hover.js';"]])
+  assert.deepEqual(scripts, [['page', "import '@real-life/docs-kit/hover.js';"]])
 })
 
 test('serves concepts and mappings to Glossary.astro through a virtual module', async () => {
@@ -104,6 +104,6 @@ test('missing options and a broken register fail at config time', async () => {
 test('Glossary.astro resolves by package name also from content outside the site package', async () => {
   const { astro } = await setup({ ...base, mappings: false })
   const [alias] = astro.at(-1).vite.resolve.alias
-  assert.equal(alias.find, '@real-life/starlight-theme/Glossary.astro')
+  assert.equal(alias.find, '@real-life/docs-kit/Glossary.astro')
   assert.equal(alias.replacement, fileURLToPath(new URL('../src/glossary/Glossary.astro', import.meta.url)))
 })

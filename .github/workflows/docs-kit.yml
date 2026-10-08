@@ -1,17 +1,17 @@
-name: theme
+name: docs-kit
 
-# Tests @real-life/starlight-theme (packages/starlight-theme) on every change to it.
+# Tests @real-life/docs-kit (packages/docs-kit) on every change to it.
 
 on:
   pull_request:
     paths:
-      - 'packages/starlight-theme/**'
-      - '.github/workflows/theme.yml'
+      - 'packages/docs-kit/**'
+      - '.github/workflows/docs-kit.yml'
   push:
     branches: [main]
     paths:
-      - 'packages/starlight-theme/**'
-      - '.github/workflows/theme.yml'
+      - 'packages/docs-kit/**'
+      - '.github/workflows/docs-kit.yml'
 
 permissions:
   contents: read
@@ -21,14 +21,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/starlight-theme
+        working-directory: packages/docs-kit
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: packages/starlight-theme/package-lock.json
+          cache-dependency-path: packages/docs-kit/package-lock.json
       - run: npm ci --no-audit --no-fund
       - run: npm test
       - name: What would be published

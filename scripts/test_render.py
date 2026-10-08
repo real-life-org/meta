@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tests for the cross-world links render.py writes to views/<world>.json (no dependencies).
 
-The Starlight theme (packages/starlight-theme) reads these files to show, in each site's
+The Starlight theme (packages/docs-kit) reads these files to show, in each site's
 glossary, what a term corresponds to in the other worlds. A small register built here stands in
 for the three schemes, so the cases do not depend on fetched worlds.
 

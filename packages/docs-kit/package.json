@@ -1,13 +1,13 @@
 {
-  "name": "@real-life/starlight-theme",
+  "name": "@real-life/docs-kit",
   "version": "0.1.0",
-  "description": "Shared Starlight theme of the Real Life family. First module: a glossary with term popovers, fed by each project's SKOS term register.",
+  "description": "Shared kit for the Starlight documentation sites of the Real Life family. First module: a glossary with term popovers, fed by each project's SKOS term register.",
   "type": "module",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/real-life-org/meta.git",
-    "directory": "packages/starlight-theme"
+    "directory": "packages/docs-kit"
   },
   "keywords": [
     "astro-component",

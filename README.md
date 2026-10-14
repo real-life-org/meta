@@ -2,7 +2,7 @@
 
 What belongs to none of the three parts alone: the layer picture, the seams between the parts, the shared term register, the roadmaps, and team coordination.
 
-![The layer picture: RLNP beside the stack, RLTP filling the lower three layers](overview/layers.adaptive.svg)
+![The layer picture: RLNP beside the stack, RLTP filling the lower four layers](overview/layers.adaptive.svg)
 
 ## The three parts
 
@@ -10,7 +10,7 @@ Real Life consists of three parts. Two are specifications, one is code.
 
 - The **Real Life Network Protocol (RLNP)** is the social specification. It defines what a circle, an encounter, a promise and a role are, and which norms apply to them. It does not define formats, signatures or keys.
 - The **Real Life Stack (RLS)** is the code: an app toolkit with an **application** layer (modules, views, forms), a **data** layer (items, relations, schema, portability) and a **connector** below them, the socket at which a backend docks. The stack ends at the socket. What a backend provides is declared through capabilities; the data layer assumes nothing beyond them.
-- The **Real Life Trust Protocol (RLTP)** is the technical specification for the three layers below the socket: **identity** (identifiers, devices, recovery), **encounter and relationship** (ceremony, trust, credentials) and **access** (groups, policy, keys, epochs). It is the backend that satisfies RLNP's requirements on a statement: portable, signed, independently verifiable. A conventional backend such as Supabase fills the same socket with fewer guarantees; communities that prefer a server use it.
+- The **Real Life Trust Protocol (RLTP)** is the technical specification for the four layers below the socket: **identity** (identifiers, devices, recovery), **encounter** (ceremony, contact cards, credentials), **trust** (what a person reveals to a contact: anchor mapping, star, group star, profile) and **access** (groups, policy, keys, epochs). It is the backend that satisfies RLNP's requirements on a statement: portable, signed, independently verifiable. A conventional backend such as Supabase fills the same socket with fewer guarantees; communities that prefer a server use it.
 
 RLNP and RLTP are both normative and neither sits above the other: RLNP decides what a thing means, RLTP decides how it is constructed. Where both use the same word, RLNP wins for the meaning and RLTP for the construction.
 

@@ -6,12 +6,12 @@ Eine Naht ist ein Wort aus RLNP, das im Stack ein Gegenstück hat. Jede Naht ist
 
 | RLNP | → | Stack layer · Schicht | Counterpart · Gegenstück |
 |---|---|---|---|
-| Place · Initiative · Resource · Project · Ort · Initiative · Ressource · Projekt | → | 4 · Data | templates and facets; one item can be all of them at once · Vorlagen und Facetten; ein Item kann alles zugleich sein |
-| Witnessing · Promise · Role · Bezeugen · Versprechen · Rolle | → | 4 · Data | an item with an author · ein Item mit Urheber |
-| Circle · Kreis | → | 4 · Data | a space with its domain model · ein Space mit seinem Domänenmodell |
-| Circle · Kreis | → | 3 · Access | a group with log and policy, once the circle takes form · eine Gruppe mit Log und Regeln, sobald der Kreis Form annimmt |
-| Visibility · Sichtbarkeit | → | 3 · Access | home space and keys: "within the circle" is `private`, "published" is `open` at the origin · Home-Space und Schlüssel: „im Kreis" ist `private`, „veröffentlicht" ist `open` am Ursprung |
-| Person · Relationship · Mensch · Beziehung | → | 2 · Encounter and relationship | contact card and ceremony · Kontaktkarte und Zeremonie |
+| Place · Initiative · Resource · Project · Ort · Initiative · Ressource · Projekt | → | 5 · Data | templates and facets; one item can be all of them at once · Vorlagen und Facetten; ein Item kann alles zugleich sein |
+| Witnessing · Promise · Role · Bezeugen · Versprechen · Rolle | → | 5 · Data | an item with an author · ein Item mit Urheber |
+| Circle · Kreis | → | 5 · Data | a space with its domain model · ein Space mit seinem Domänenmodell |
+| Circle · Kreis | → | 4 · Access | a group with log and policy, once the circle takes form · eine Gruppe mit Log und Regeln, sobald der Kreis Form annimmt |
+| Visibility · Sichtbarkeit | → | 4 · Access | home space and keys: "within the circle" is `private`, "published" is `open` at the origin · Home-Space und Schlüssel: „im Kreis" ist `private`, „veröffentlicht" ist `open` am Ursprung |
+| Person · Relationship · Mensch · Beziehung | → | 2 · Encounter | contact card and ceremony · Kontaktkarte und Zeremonie |
 | Person · Relationship · Mensch · Beziehung | → | 1 · Identity | a key as identifier, devices · Schlüssel als Kennung, Geräte |
 
 ## Seams that are open · Offene Nähte

@@ -278,6 +278,19 @@
    "@id": "rlnp:Bezeugen",
    "skos:relatedMatch": "rltp:Vouch",
    "skos:note": "A vouch is one member's signed word for one admission of one person inside a group; RLNP's Bezeugen is broader. Related, not equal."
+  },
+  {
+   "@id": "rltp:TrustClass",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: what a person reveals to one contact, class by class, is the protocol's construction of disclosure inside a relationship (RLNP Beziehung, mapped at rltp:Edge). RLNP Sichtbarkeit concerns where a thing lies, not what a person reveals about themselves. A class is no trust level and no score: it answers what a person shows, not how much they trust."
+  },
+  {
+   "@id": "rltp:Profile",
+   "skos:relatedMatch": "rls:profile",
+   "skos:note": "Related, not equal: the Stack's person profile is the representation of a person as an item; the RLTP profile is the name, optional image and optional text a sender states about itself to one contact, by default its trusted contacts. Neither is the person (RLNP Mensch, related at rls:profile)."
+  },
+  {
+   "@id": "rltp:AnchorRotation",
+   "skos:note": "Deliberately without counterpart in RLNP or the Stack: moving the community anchor to its next generation is key management of one person's anchors, protocol construction like every anchor (RLNP Mensch, related at rltp:Anchor). For the person and the Stack the contacts stay the same people."
   }
  ]
 }

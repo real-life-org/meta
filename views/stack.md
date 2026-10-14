@@ -54,6 +54,7 @@ Code: `ProfilePanelContent`
 Quelle: [12-profile.md](https://github.com/real-life-org/real-life-stack/blob/master/docs/spec/12-profile.md)
 
 - verwandt: **[Mensch](network.md#mensch)** (Netzwerk)
+- verwandt: **[Profil](trust.md#profile)** (Protokoll)
 
 ## Relation
 *Relation*

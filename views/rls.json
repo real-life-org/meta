@@ -72,6 +72,19 @@
      "de": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch",
      "en": "https://github.com/real-life-org/meta/blob/main/views/network.md#mensch"
     }
+   },
+   {
+    "relation": "relatedMatch",
+    "world": "rltp",
+    "id": "rltp:Profile",
+    "label": {
+     "de": "Profil",
+     "en": "Profile"
+    },
+    "url": {
+     "de": "https://trust-protocol.real-life.org/reference/glossary/#Profile",
+     "en": "https://trust-protocol.real-life.org/reference/glossary/#Profile"
+    }
    }
   ],
   "relation": [

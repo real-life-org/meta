@@ -171,6 +171,21 @@
     }
    }
   ],
+  "Profile": [
+   {
+    "relation": "relatedMatch",
+    "world": "rls",
+    "id": "rls:profile",
+    "label": {
+     "de": "Personenprofil",
+     "en": "Person profile"
+    },
+    "url": {
+     "de": "https://real-life-stack.de/handbuch/glossar/#profile",
+     "en": "https://real-life-stack.de/en/handbuch/glossar/#profile"
+    }
+   }
+  ],
   "VisibilityMode": [
    {
     "relation": "relatedMatch",

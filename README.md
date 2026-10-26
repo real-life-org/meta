@@ -93,4 +93,6 @@ Identifiers are served from `real-life.org`: `rlnp/v1`, `rltp/v1`, `rls/v1`, `me
 
 ## License
 
-[CC BY 4.0](LICENSE), like the two specification repositories.
+Text: [CC BY 4.0](LICENSE). `packages/`, `scripts/` and `renovate/`:
+[MIT](LICENSE-CODE). Which license a repository of the family takes is decided
+in [LICENSING.md](LICENSING.md).

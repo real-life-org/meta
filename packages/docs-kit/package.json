@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Shared kit for the Starlight documentation sites of the Real Life family. First module: a glossary with term popovers, fed by each project's SKOS term register.",
   "type": "module",
-  "license": "CC-BY-4.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/real-life-org/meta.git",

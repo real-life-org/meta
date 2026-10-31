@@ -97,7 +97,7 @@ jobs:
       # Renovate moves this SHA itself: see the last packageRule in
       # `renovate/default.json5`, which watches exactly this action. Moved by
       # hand it would drift silently.
-      - uses: renovatebot/github-action@230ce922b08968d0a4f6f70f295601daff09ef1d # v46.3.7
+      - uses: renovatebot/github-action@43b963bf5dd5e57f1f95c59765a018d782870211 # v46.3.11
         with:
           # Own token instead of GITHUB_TOKEN: GitHub starts NO workflows for
           # events triggered with GITHUB_TOKEN. A bump PR created that way
